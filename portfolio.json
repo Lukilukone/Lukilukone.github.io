@@ -3,16 +3,23 @@
     "id": "mappe-1",
     "name": "al-Maghrib",
     "images": [
-      { "name": "Marokko", "path": "images/project1/marokko.jpg" },
-      { "name": "Mann", "path": "images/project1/mann.jpg" },
-      { "name": "Mann", "path": "images/project1/mann.jpg" },
-      { "name": "Mann", "path": "images/project1/mann.jpg" },
-      { "name": "Mann", "path": "images/project1/mann.jpg" },
-      { "name": "Mann", "path": "images/project1/mann.jpg" },
-      { "name": "Mann", "path": "images/project1/mann.jpg" },
-      { "name": "Mann", "path": "images/project1/mann.jpg" },
-      { "name": "Mann", "path": "images/project1/mann.jpg" },
-      { "name": "Mann", "path": "images/project1/mann.jpg" }
+      { "name": "Die Essenz Marokkos", "path": "images/project1/marokko.jpg" },
+      { "name": "Geschäftiges Treiben", "path": "images/project1/mann.jpg" },
+      { "name": "Roller verboten", "path": "images/project1/roller.jpg" },
+      { "name": "Ökologische Fortbewegung", "path": "images/project1/fahrrad.jpg" },
+      { "name": "Durch Unten und Oben", "path": "images/project1/pfuetze.jpg" },
+      { "name": "Blaue Insel", "path": "images/project1/blau.jpg" },
+      { "name": "Wache über das Leder", "path": "images/project1/leder.jpg" },
+      { "name": "Einsames Besinnen", "path": "images/project1/aussicht.jpg" },
+      { "name": "Mobiles Café", "path": "images/project1/autocafe.jpg" },
+      { "name": "Zeit zu Zweit", "path": "images/project1/paar.jpg" },
+      { "name": "Zwei Bretter und Zehn Beine", "path": "images/project1/kamel.jpg" },
+      { "name": "Dienstbote", "path": "images/project1/surf.jpg" },
+      { "name": "...der wird tief fallen", "path": "images/project1/fall.jpg" },
+      { "name": "Zwischen Wasser und Sand", "path": "images/project1/karawane.jpg" },
+      { "name": "Wasser geht schlafen", "path": "images/project1/strand.jpg" },
+      { "name": "Küstenabend", "path": "images/project1/kueste.jpg" },
+      { "name": "Gute Nacht Marokko", "path": "images/project1/sonnenuntergang.jpg" }
       
     ]
   }
