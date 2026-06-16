@@ -29,7 +29,7 @@
     "images": [
       { "name": "Letzter Stopp", "path": "images/istanbul/schwarzmeer.jpg" },
       { "name": "Blick hinaus", "path": "images/istanbul/blick.jpg" },
-      { "name": "Spiegelbild", "path": "images/istanbul/portrait.jpg" }
+      { "name": "Spiegelbild", "path": "images/istanbul/portrait.jpg" },
       { "name": "Kaffeepause", "path": "images/istanbul/kaffee.jpg" },
       { "name": "Drahtseilakt", "path": "images/istanbul/taube.jpg" },
       { "name": "Weg nach unten", "path": "images/istanbul/treppe.jpg" },
