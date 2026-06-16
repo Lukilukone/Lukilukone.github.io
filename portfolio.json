@@ -22,6 +22,18 @@
       { "name": "Gute Nacht Marokko", "path": "images/project1/sonnenuntergang.jpg" }
       
     ]
+  },
+  {
+    "id": "mappe-2",
+    "name": "İstanbul",
+    "images": [
+      { "name": "Letzter Stopp", "path": "images/istanbul/schwarzmeer.jpg" },
+      { "name": "Blick hinaus", "path": "images/istanbul/blick.jpg" },
+      { "name": "Spiegelbild", "path": "images/istanbul/portrait.jpg" }
+      { "name": "Kaffeepause", "path": "images/istanbul/kaffee.jpg" },
+      { "name": "Drahtseilakt", "path": "images/istanbul/taube.jpg" },
+      { "name": "Weg nach unten", "path": "images/istanbul/treppe.jpg" },
+      { "name": "Den Letzten fressen die Katzen", "path": "images/istanbul/grab.jpg" }
+    ]
   }
-      
 ]
