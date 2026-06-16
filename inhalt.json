@@ -3,7 +3,7 @@
     "id": "mappe-1",
     "name": "Architektur & Raum",
     "images": [
-      { "name": "Minimalistisches Gebäude", "path": "images/project1/bild1.jpg" },
+      { "name": "Minimalistisches Gebäude", "path": "images/project1/images.jpg" },
       { "name": "Schattenwurf", "path": "images/project1/bild2.jpg" }
     ]
   },
