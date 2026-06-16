@@ -4,12 +4,7 @@
     "name": "Architektur & Raum",
     "images": [
       { "name": "Minimalistisches Gebäude", "path": "images/project1/images.jpg" },
-      { "name": "Schattenwurf", "path": "images/project1/bild2.jpg" }
     ]
-  },
-  {
-    "id": "mappe-2",
-    "name": "Porträts 2026",
-    "images": [
-      { "name": "Studio Licht", "path": "images/project2/cover.jpg" }
+  }
       
+]
