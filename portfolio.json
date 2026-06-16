@@ -3,9 +3,9 @@
     "id": "mappe-1",
     "name": "Architektur & Raum",
     "images": [
-      { "name": "Minimalistisches Gebäude", "path": "images/project1/images.jpg" },
-      { "name": "Marokko", "path": "images/project1/XE40883.jpg" },
-      { "name": "Mann", "path": "images/project1/_XE40851.jpg" }
+      { "name": "Minimalistisches Gebäude", "path": ".images/project1/images.jpg" },
+      { "name": "Marokko", "path": ".images/project1/XE40883.jpg" },
+      { "name": "Mann", "path": ".images/project1/_XE40851.jpg" }
     ]
   }
       
