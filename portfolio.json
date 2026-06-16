@@ -1,11 +1,19 @@
 [
   {
     "id": "mappe-1",
-    "name": "Architektur & Raum",
+    "name": "al-Maghrib",
     "images": [
-      { "name": "Minimalistisches Gebäude", "path": "images/project1/images.jpg" },
       { "name": "Marokko", "path": "images/project1/marokko.jpg" },
+      { "name": "Mann", "path": "images/project1/mann.jpg" },
+      { "name": "Mann", "path": "images/project1/mann.jpg" },
+      { "name": "Mann", "path": "images/project1/mann.jpg" },
+      { "name": "Mann", "path": "images/project1/mann.jpg" },
+      { "name": "Mann", "path": "images/project1/mann.jpg" },
+      { "name": "Mann", "path": "images/project1/mann.jpg" },
+      { "name": "Mann", "path": "images/project1/mann.jpg" },
+      { "name": "Mann", "path": "images/project1/mann.jpg" },
       { "name": "Mann", "path": "images/project1/mann.jpg" }
+      
     ]
   }
       
