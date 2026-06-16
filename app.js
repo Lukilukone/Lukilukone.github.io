@@ -2,6 +2,43 @@
   'use strict';
 
   // ---------------------------------------------------------------
+  // Edit-mode protection (deterrent only — see note below)
+  // ---------------------------------------------------------------
+  // WICHTIG: Dies ist KEIN echter Sicherheitsmechanismus. Bei rein
+  // statischem Hosting (GitHub Pages, Netlify, etc.) liegt der gesamte
+  // Code offen im Browser. Jede technisch versierte Person kann diese
+  // Prüfung über die Entwicklerkonsole umgehen. Der Hash verhindert nur,
+  // dass das Passwort im Klartext im Quellcode steht — er schützt nicht
+  // vor jemandem, der bewusst versucht, den Schutz zu umgehen.
+  //
+  // Passwort ändern: öffne https://emn178.github.io/online-tools/sha256.html
+  // (oder die Konsole: crypto.subtle.digest), gib dein neues Passwort ein
+  // und ersetze den Hash unten durch den erzeugten SHA-256-Hash.
+  //
+  // Aktueller Hash entspricht dem Passwort: "portfolio2026"
+  const EDIT_PASSWORD_HASH =
+    '9881928f60e14fcbd7a28d2166ee4e8ba456daa9df696159dcae35050762895b'; // SHA-256 von "portfolio2026"
+
+  const SESSION_KEY = 'portfolio:editUnlocked';
+
+  async function sha256(text) {
+    const enc = new TextEncoder().encode(text);
+    const hashBuffer = await crypto.subtle.digest('SHA-256', enc);
+    return Array.from(new Uint8Array(hashBuffer))
+      .map((b) => b.toString(16).padStart(2, '0'))
+      .join('');
+  }
+
+  function isEditUnlocked() {
+    return sessionStorage.getItem(SESSION_KEY) === '1';
+  }
+
+  function setEditUnlocked(value) {
+    if (value) sessionStorage.setItem(SESSION_KEY, '1');
+    else sessionStorage.removeItem(SESSION_KEY);
+  }
+
+  // ---------------------------------------------------------------
   // Storage layer (localStorage, with safe JSON helpers)
   // ---------------------------------------------------------------
   const LS_PROJECTS = 'portfolio:projects';
@@ -111,6 +148,14 @@
 
   const toast = $('toast');
 
+  const lockBtn = $('btn-lock-toggle');
+  const lockIconClosed = $('lock-icon-closed');
+  const lockIconOpen = $('lock-icon-open');
+  const galleryEditControls = $('gallery-edit-controls');
+  const loginOverlay = $('login-overlay');
+  const loginPassword = $('login-password');
+  const loginError = $('login-error');
+
   // ---------------------------------------------------------------
   // Persistence: load / save project list
   // ---------------------------------------------------------------
@@ -135,6 +180,58 @@
   }
 
   // ---------------------------------------------------------------
+  // Edit mode: show/hide all upload & editing controls
+  // ---------------------------------------------------------------
+  function applyEditMode() {
+    const unlocked = isEditUnlocked();
+    document.body.classList.toggle('edit-unlocked', unlocked);
+    lockIconClosed.hidden = unlocked;
+    lockIconOpen.hidden = !unlocked;
+    lockBtn.classList.toggle('unlocked', unlocked);
+    galleryEditControls.hidden = !unlocked;
+    dropzone.hidden = !unlocked;
+  }
+
+  function openLoginDialog() {
+    loginPassword.value = '';
+    loginError.hidden = true;
+    loginOverlay.hidden = false;
+    setTimeout(() => loginPassword.focus(), 0);
+  }
+
+  function closeLoginDialog() {
+    loginOverlay.hidden = true;
+  }
+
+  async function attemptLogin() {
+    const value = loginPassword.value;
+    if (!value) return;
+    const hash = await sha256(value);
+    if (hash === EDIT_PASSWORD_HASH) {
+      setEditUnlocked(true);
+      closeLoginDialog();
+      applyEditMode();
+      renderHome();
+      if (currentId) { renderGalleryHeader(); renderImageGrid(); }
+    } else {
+      loginError.hidden = false;
+      loginPassword.value = '';
+      loginPassword.focus();
+    }
+  }
+
+  function toggleLock() {
+    if (isEditUnlocked()) {
+      setEditUnlocked(false);
+      applyEditMode();
+      renderHome();
+      if (currentId) { renderGalleryHeader(); renderImageGrid(); }
+    } else {
+      openLoginDialog();
+    }
+  }
+
+  // ---------------------------------------------------------------
   // Rendering: HOME view
   // ---------------------------------------------------------------
   function renderHome() {
@@ -147,11 +244,14 @@
       folderGrid.appendChild(buildFolderCard(p, i));
     });
 
-    folderGrid.appendChild(buildNewFolderCard(projects.length));
+    if (isEditUnlocked()) {
+      folderGrid.appendChild(buildNewFolderCard(projects.length));
+    }
   }
 
   function buildFolderCard(project, index) {
     const num = String(index + 1).padStart(2, '0');
+    const unlocked = isEditUnlocked();
     const card = document.createElement('div');
     card.className = 'folder-card fade-in';
 
@@ -169,9 +269,10 @@
       </button>
       <div class="folder-meta-row">
         <div style="flex:1; min-width:0;">
-          <h3 class="folder-name" data-action="rename" title="Klicken, um den Namen zu ändern">${escapeHtml(project.name)}</h3>
+          <h3 class="folder-name" ${unlocked ? 'data-action="rename" title="Klicken, um den Namen zu ändern"' : ''}>${escapeHtml(project.name)}</h3>
           <p class="folder-count">${project.count} ${project.count === 1 ? 'Bild' : 'Bilder'}</p>
         </div>
+        ${unlocked ? `
         <div class="folder-actions">
           <button class="icon-btn" data-action="rename" aria-label="Umbenennen">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 3a2.85 2.83 0 114 4L7.5 20.5 2 22l1.5-5.5L17 3z"/></svg>
@@ -179,21 +280,27 @@
           <button class="icon-btn" data-action="delete" aria-label="Mappe löschen">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M8 6V4a2 2 0 012-2h4a2 2 0 012 2v2m3 0l-1 14a2 2 0 01-2 2H7a2 2 0 01-2-2L4 6h16z"/></svg>
           </button>
-        </div>
+        </div>` : ''}
       </div>
     `;
 
     card.querySelector('[data-action="open"]').addEventListener('click', () => openProject(project.id));
-    card.querySelectorAll('[data-action="rename"]').forEach((el) => {
-      el.addEventListener('click', (e) => {
-        e.stopPropagation();
-        startRenameFolderCard(card, project);
+
+    if (unlocked) {
+      card.querySelectorAll('[data-action="rename"]').forEach((el) => {
+        el.addEventListener('click', (e) => {
+          e.stopPropagation();
+          startRenameFolderCard(card, project);
+        });
       });
-    });
-    card.querySelector('[data-action="delete"]').addEventListener('click', (e) => {
-      e.stopPropagation();
-      requestDeleteProject(project);
-    });
+      const deleteBtn = card.querySelector('[data-action="delete"]');
+      if (deleteBtn) {
+        deleteBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          requestDeleteProject(project);
+        });
+      }
+    }
 
     return card;
   }
@@ -263,6 +370,7 @@
   // Project actions
   // ---------------------------------------------------------------
   function createProject(name) {
+    if (!isEditUnlocked()) return;
     const project = { id: uid(), name: name.trim(), createdAt: Date.now(), count: 0, cover: null };
     projects.push(project);
     saveProjectsList();
@@ -270,6 +378,7 @@
   }
 
   function renameProject(id, name) {
+    if (!isEditUnlocked()) return;
     const p = projects.find((p) => p.id === id);
     if (p) p.name = name;
     saveProjectsList();
@@ -278,6 +387,7 @@
   }
 
   function requestDeleteProject(project) {
+    if (!isEditUnlocked()) return;
     showConfirm(
       'Mappe löschen?',
       `„${project.name}“ und alle ${project.count} enthaltenen Bilder werden dauerhaft gelöscht.`,
@@ -286,6 +396,7 @@
   }
 
   function deleteProject(id) {
+    if (!isEditUnlocked()) return;
     const meta = lsGet(lsImagesKey(id)) || [];
     meta.forEach((m) => lsRemove(lsImageDataKey(id, m.id)));
     lsRemove(lsImagesKey(id));
@@ -336,7 +447,12 @@
   function renderGalleryHeader() {
     const project = currentProject();
     if (!project) return;
-    galleryTitle.innerHTML = `${escapeHtml(project.name)} <svg class="pencil-hint" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 3a2.85 2.83 0 114 4L7.5 20.5 2 22l1.5-5.5L17 3z"/></svg>`;
+    const unlocked = isEditUnlocked();
+    galleryTitle.innerHTML = unlocked
+      ? `${escapeHtml(project.name)} <svg class="pencil-hint" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 3a2.85 2.83 0 114 4L7.5 20.5 2 22l1.5-5.5L17 3z"/></svg>`
+      : escapeHtml(project.name);
+    galleryTitle.classList.toggle('editable', unlocked);
+    galleryTitle.title = unlocked ? 'Klicken, um den Namen zu ändern' : '';
     galleryMeta.textContent = `${images.length} ${images.length === 1 ? 'Bild' : 'Bilder'}`;
   }
 
@@ -392,6 +508,7 @@
   function buildImageTile(image, index) {
     const num = String(index + 1).padStart(2, '0');
     const isCover = index === 0;
+    const unlocked = isEditUnlocked();
     const tile = document.createElement('div');
     tile.className = 'image-tile fade-in';
     tile.innerHTML = `
@@ -402,6 +519,7 @@
           <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
         </span>` : ''}
       </button>
+      ${unlocked ? `
       <div class="tile-actions">
         ${!isCover ? `<button data-action="cover" aria-label="Als Titelbild festlegen" title="Als Titelbild festlegen">
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
@@ -409,16 +527,21 @@
         <button data-action="delete" aria-label="Bild löschen" title="Bild löschen">
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M8 6V4a2 2 0 012-2h4a2 2 0 012 2v2m3 0l-1 14a2 2 0 01-2 2H7a2 2 0 01-2-2L4 6h16z"/></svg>
         </button>
-      </div>
+      </div>` : ''}
     `;
 
     tile.querySelector('[data-action="open"]').addEventListener('click', () => openLightbox(index));
-    const coverBtn = tile.querySelector('[data-action="cover"]');
-    if (coverBtn) coverBtn.addEventListener('click', (e) => { e.stopPropagation(); setAsCover(image.id); });
-    tile.querySelector('[data-action="delete"]').addEventListener('click', (e) => {
-      e.stopPropagation();
-      requestDeleteImage(image);
-    });
+    if (unlocked) {
+      const coverBtn = tile.querySelector('[data-action="cover"]');
+      if (coverBtn) coverBtn.addEventListener('click', (e) => { e.stopPropagation(); setAsCover(image.id); });
+      const deleteBtn = tile.querySelector('[data-action="delete"]');
+      if (deleteBtn) {
+        deleteBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          requestDeleteImage(image);
+        });
+      }
+    }
 
     return tile;
   }
@@ -427,7 +550,7 @@
   // Upload handling
   // ---------------------------------------------------------------
   async function handleFiles(fileList) {
-    if (!currentId) return;
+    if (!currentId || !isEditUnlocked()) return;
     const files = Array.from(fileList || []).filter((f) => f.type.startsWith('image/'));
     if (files.length === 0) return;
 
@@ -474,6 +597,7 @@
   // Image actions
   // ---------------------------------------------------------------
   function requestDeleteImage(image) {
+    if (!isEditUnlocked()) return;
     showConfirm(
       'Bild löschen?',
       `„${image.name}“ wird dauerhaft aus dieser Mappe entfernt.`,
@@ -482,6 +606,7 @@
   }
 
   function deleteImage(imageId) {
+    if (!isEditUnlocked()) return;
     lsRemove(lsImageDataKey(currentId, imageId));
     images = images.filter((img) => img.id !== imageId);
 
@@ -508,6 +633,7 @@
   }
 
   function setAsCover(imageId) {
+    if (!isEditUnlocked()) return;
     const idx = images.findIndex((img) => img.id === imageId);
     if (idx <= 0) return;
     const [picked] = images.splice(idx, 1);
@@ -556,6 +682,7 @@
     const num = String(lightboxIndex + 1).padStart(2, '0');
     const total = String(images.length).padStart(2, '0');
     lbCaption.innerHTML = `<span class="lb-index">Nº ${num}</span> / ${total}<span class="lb-name">${escapeHtml(img.name)}</span>`;
+    $('lb-delete').hidden = !isEditUnlocked();
   }
 
   // ---------------------------------------------------------------
@@ -579,7 +706,7 @@
   // Event wiring
   // ---------------------------------------------------------------
   $('btn-back').addEventListener('click', goHome);
-  galleryTitle.addEventListener('click', startRenameGalleryTitle);
+  galleryTitle.addEventListener('click', () => { if (isEditUnlocked()) startRenameGalleryTitle(); });
 
   $('btn-upload-trigger').addEventListener('click', () => fileInput.click());
   fileInput.addEventListener('change', (e) => {
@@ -606,6 +733,7 @@
   $('lb-prev').addEventListener('click', lightboxPrev);
   $('lb-next').addEventListener('click', lightboxNext);
   $('lb-delete').addEventListener('click', () => {
+    if (!isEditUnlocked()) return;
     const img = images[lightboxIndex];
     if (img) requestDeleteImage(img);
   });
@@ -632,9 +760,21 @@
 
   $('toast-close').addEventListener('click', () => { toast.hidden = true; });
 
+  lockBtn.addEventListener('click', toggleLock);
+  $('login-cancel').addEventListener('click', closeLoginDialog);
+  $('login-submit').addEventListener('click', attemptLogin);
+  loginPassword.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') attemptLogin();
+    if (e.key === 'Escape') closeLoginDialog();
+  });
+  loginOverlay.addEventListener('click', (e) => {
+    if (e.target === loginOverlay) closeLoginDialog();
+  });
+
   // ---------------------------------------------------------------
   // Init
   // ---------------------------------------------------------------
+  applyEditMode();
   projects = loadProjectsList();
   renderHome();
 })();
