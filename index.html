@@ -61,8 +61,11 @@
   <button class="lb-next" id="lb-next" aria-label="Nächstes Bild">
     <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
   </button>
-  <img id="lb-image" class="lb-image" src="" alt="">
-  <div class="lb-caption" id="lb-caption"></div>
+  <img id="lb-image" class="lb-image lb-image-hidden" src="" alt="">
+  <div class="lb-spinner" id="lb-spinner">
+    <svg class="spin" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a9 9 0 11-9-9"/></svg>
+  </div>
+  <div class="lb-caption lb-caption-hidden" id="lb-caption"></div>
 </div>
 
 <!-- ============ CONFIRM DIALOG ============ -->

@@ -6,7 +6,8 @@
       {
         "name": "Die Essenz Marokkos",
         "path": "images/project1/marokko.jpg",
-        "thumb": "thumbs\\images\\project1\\marokko.jpg"
+        "thumb": "thumbs\\images\\project1\\marokko.jpg",
+        "cover": "covers\\images\\project1\\marokko.jpg"
       },
       {
         "name": "Geschäftiges Treiben",
@@ -122,7 +123,8 @@
       {
         "name": "Letzter Stopp",
         "path": "images/istanbul/schwarzmeer.jpg",
-        "thumb": "thumbs\\images\\istanbul\\schwarzmeer.jpg"
+        "thumb": "thumbs\\images\\istanbul\\schwarzmeer.jpg",
+        "cover": "covers\\images\\istanbul\\schwarzmeer.jpg"
       },
       {
         "name": "Blick hinaus",
