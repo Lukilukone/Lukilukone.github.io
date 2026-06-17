@@ -57,7 +57,7 @@
   // Rendering: HOME view
   // ---------------------------------------------------------------
   function renderHome() {
-    homeMeta.textContent = `${projects.length} ${projects.length === 1 ? 'Mappe' : 'Mappen'} · Kontaktbogen-Index`;
+    homeMeta.textContent = `${projects.length} ${projects.length === 1 ? 'Mappe' : 'Mappen'} · Index`;
     homeEmptyHint.hidden = projects.length !== 0;
 
     folderGrid.innerHTML = '';
