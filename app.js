@@ -27,11 +27,20 @@
   const lightbox = $('lightbox');
   const lbImage = $('lb-image');
   const lbCaption = $('lb-caption');
+  const lbSpinner = $('lb-spinner');
+
+  const toast = $('toast');
+  const toastText = $('toast-text');
 
   function escapeHtml(str) {
     const div = document.createElement('div');
     div.textContent = str;
     return div.innerHTML;
+  }
+
+  function showToast(message) {
+    if (message) toastText.textContent = message;
+    toast.hidden = false;
   }
 
   // ---------------------------------------------------------------
@@ -72,11 +81,13 @@
     const card = document.createElement('div');
     card.className = 'folder-card fade-in';
 
-    // Automatisch das erste Bild der Mappe als Cover nutzen
-    // (nutzt die kleine Vorschauversion, falls vorhanden, statt des Originals)
+    // Automatisch das erste Bild der Mappe als Cover nutzen.
+    // Bevorzugt wird die größere "cover"-Version (schärfer, da das
+    // Mappen-Cover groß dargestellt wird); falls nicht vorhanden, fällt
+    // es auf "thumb" und zuletzt auf das Original zurück.
     const hasImages = project.images && project.images.length > 0;
     const coverImg = hasImages ? project.images[0] : null;
-    const coverPath = coverImg ? (coverImg.thumb || coverImg.path) : null;
+    const coverPath = coverImg ? (coverImg.cover || coverImg.thumb || coverImg.path) : null;
 
     const thumbInner = coverPath
       ? `<img src="${coverPath}" alt="${escapeHtml(project.name)}" loading="lazy" decoding="async">`
@@ -175,6 +186,9 @@
   function closeLightbox() {
     lightboxIndex = null;
     lightbox.hidden = true;
+    lbImage.classList.add('lb-image-hidden');
+    lbCaption.classList.add('lb-caption-hidden');
+    lbImage.src = '';
   }
 
   function lightboxPrev() {
@@ -193,24 +207,29 @@
     const img = images[lightboxIndex];
     if (!img) { closeLightbox(); return; }
 
-    // Zuerst das bereits geladene Vorschaubild anzeigen (kein Warten/Flackern),
-    // danach im Hintergrund das hochauflösende Original laden und austauschen.
-    const previewSrc = img.thumb || img.path;
-    lbImage.src = previewSrc;
-    lbImage.alt = img.name;
-    lbImage.classList.toggle('lb-image-loading', !!img.thumb && img.thumb !== img.path);
+    // Lädt direkt das Originalbild — kein Zwischenschritt über das
+    // Thumbnail, damit die Bildgröße beim Öffnen nicht "springt".
+    // Während des Ladens zeigt ein Spinner an, dass etwas passiert.
+    lbImage.classList.add('lb-image-hidden');
+    lbCaption.classList.add('lb-caption-hidden');
+    lbSpinner.hidden = false;
 
-    if (img.thumb && img.thumb !== img.path) {
-      const fullImg = new Image();
-      fullImg.onload = () => {
-        // Nur austauschen, wenn der Nutzer währenddessen nicht weitergeblättert hat
-        if (images[lightboxIndex] === img) {
-          lbImage.src = img.path;
-          lbImage.classList.remove('lb-image-loading');
-        }
-      };
-      fullImg.src = img.path;
-    }
+    const fullImg = new Image();
+    fullImg.onload = () => {
+      // Nur anzeigen, wenn der Nutzer währenddessen nicht weitergeblättert hat
+      if (images[lightboxIndex] !== img) return;
+      lbImage.src = img.path;
+      lbImage.alt = img.name;
+      lbImage.classList.remove('lb-image-hidden');
+      lbCaption.classList.remove('lb-caption-hidden');
+      lbSpinner.hidden = true;
+    };
+    fullImg.onerror = () => {
+      if (images[lightboxIndex] !== img) return;
+      lbSpinner.hidden = true;
+      showToast('Bild konnte nicht geladen werden.');
+    };
+    fullImg.src = img.path;
 
     const num = String(lightboxIndex + 1).padStart(2, '0');
     const total = String(images.length).padStart(2, '0');
@@ -235,6 +254,8 @@
     if (e.key === 'ArrowLeft') lightboxPrev();
     if (e.key === 'ArrowRight') lightboxNext();
   });
+
+  $('toast-close').addEventListener('click', () => { toast.hidden = true; });
 
   // Start der Anwendung
   initApp();
