@@ -35,8 +35,10 @@
       { "name": "Letzter Stopp", "path": "images/istanbul/schwarzmeer.jpg" },
       { "name": "Blick hinaus", "path": "images/istanbul/blick.jpg" },
       { "name": "Spiegelbild", "path": "images/istanbul/portrait.jpg" },
+      { "name": "Charisma", "path": "images/istanbul/zwinker.jpg" },
       { "name": "Kaffeepause", "path": "images/istanbul/kaffee.jpg" },
       { "name": "Drahtseilakt", "path": "images/istanbul/taube.jpg" },
+      { "name": "Chateau", "path": "images/istanbul/teppich.jpg" },
       { "name": "Weg nach unten", "path": "images/istanbul/treppe.jpg" },
       { "name": "Den Letzten fressen die Katzen", "path": "images/istanbul/grab.jpg" }
     ]
