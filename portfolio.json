@@ -3,44 +3,167 @@
     "id": "mappe-1",
     "name": "al-Maghrib",
     "images": [
-      { "name": "Die Essenz Marokkos", "path": "images/project1/marokko.jpg" },
-      { "name": "Geschäftiges Treiben", "path": "images/project1/mann.jpg" },
-      { "name": "Roller verboten", "path": "images/project1/roller.jpg" },
-      { "name": "Ökologische Fortbewegung", "path": "images/project1/fahrrad.jpg" },
-      { "name": "Durch Unten und Oben", "path": "images/project1/pfuetze.jpg" },
-      { "name": "Blaue Insel", "path": "images/project1/blau.jpg" },
-      { "name": "Wache über das Leder", "path": "images/project1/leder.jpg" },
-      { "name": "Einsames Besinnen", "path": "images/project1/aussicht.jpg" },
-      { "name": "Mobiles Café", "path": "images/project1/autocafe.jpg" },
-      { "name": "Zeit zu Zweit", "path": "images/project1/paar.jpg" },
-      { "name": "Vogelperspektive", "path": "images/project1/gondel.jpg" },
-      { "name": "Zwei Bretter und Zehn Beine", "path": "images/project1/kamel.jpg" },
-      { "name": "Dienstbote", "path": "images/project1/surf.jpg" },
-      { "name": "...der wird tief fallen", "path": "images/project1/fall.jpg" },
-      { "name": "Leitung", "path": "images/project1/leitung.jpg" },
-      { "name": "Zwischen Wasser und Sand", "path": "images/project1/karawane.jpg" },
-      { "name": "Wasser geht schlafen", "path": "images/project1/strand.jpg" },
-      { "name": "Abkühlung", "path": "images/project1/schwimmen.jpg" },
-      { "name": "Küstenabend", "path": "images/project1/kueste.jpg" },
-      { "name": "Abflug", "path": "images/project1/flugzeug.jpg" },
-      { "name": "Gute Nacht Marokko", "path": "images/project1/sonnenuntergang.jpg" },
-      { "name": "Herr über die Nacht", "path": "images/project1/katze.jpg" }
-      
+      {
+        "name": "Die Essenz Marokkos",
+        "path": "images/project1/marokko.jpg",
+        "thumb": "thumbs\\images\\project1\\marokko.jpg"
+      },
+      {
+        "name": "Geschäftiges Treiben",
+        "path": "images/project1/mann.jpg",
+        "thumb": "thumbs\\images\\project1\\mann.jpg"
+      },
+      {
+        "name": "Roller verboten",
+        "path": "images/project1/roller.jpg",
+        "thumb": "thumbs\\images\\project1\\roller.jpg"
+      },
+      {
+        "name": "Ökologische Fortbewegung",
+        "path": "images/project1/fahrrad.jpg",
+        "thumb": "thumbs\\images\\project1\\fahrrad.jpg"
+      },
+      {
+        "name": "Durch Unten und Oben",
+        "path": "images/project1/pfuetze.jpg",
+        "thumb": "thumbs\\images\\project1\\pfuetze.jpg"
+      },
+      {
+        "name": "Blaue Insel",
+        "path": "images/project1/blau.jpg",
+        "thumb": "thumbs\\images\\project1\\blau.jpg"
+      },
+      {
+        "name": "Wache über das Leder",
+        "path": "images/project1/leder.jpg",
+        "thumb": "thumbs\\images\\project1\\leder.jpg"
+      },
+      {
+        "name": "Einsames Besinnen",
+        "path": "images/project1/aussicht.jpg",
+        "thumb": "thumbs\\images\\project1\\aussicht.jpg"
+      },
+      {
+        "name": "Mobiles Café",
+        "path": "images/project1/autocafe.jpg",
+        "thumb": "thumbs\\images\\project1\\autocafe.jpg"
+      },
+      {
+        "name": "Zeit zu Zweit",
+        "path": "images/project1/paar.jpg",
+        "thumb": "thumbs\\images\\project1\\paar.jpg"
+      },
+      {
+        "name": "Vogelperspektive",
+        "path": "images/project1/gondel.jpg",
+        "thumb": "thumbs\\images\\project1\\gondel.jpg"
+      },
+      {
+        "name": "Zwei Bretter und Zehn Beine",
+        "path": "images/project1/kamel.jpg",
+        "thumb": "thumbs\\images\\project1\\kamel.jpg"
+      },
+      {
+        "name": "Dienstbote",
+        "path": "images/project1/surf.jpg",
+        "thumb": "thumbs\\images\\project1\\surf.jpg"
+      },
+      {
+        "name": "...der wird tief fallen",
+        "path": "images/project1/fall.jpg",
+        "thumb": "thumbs\\images\\project1\\fall.jpg"
+      },
+      {
+        "name": "Leitung",
+        "path": "images/project1/leitung.jpg",
+        "thumb": "thumbs\\images\\project1\\leitung.jpg"
+      },
+      {
+        "name": "Zwischen Wasser und Sand",
+        "path": "images/project1/karawane.jpg",
+        "thumb": "thumbs\\images\\project1\\karawane.jpg"
+      },
+      {
+        "name": "Wasser geht schlafen",
+        "path": "images/project1/strand.jpg",
+        "thumb": "thumbs\\images\\project1\\strand.jpg"
+      },
+      {
+        "name": "Abkühlung",
+        "path": "images/project1/schwimmen.jpg",
+        "thumb": "thumbs\\images\\project1\\schwimmen.jpg"
+      },
+      {
+        "name": "Küstenabend",
+        "path": "images/project1/kueste.jpg",
+        "thumb": "thumbs\\images\\project1\\kueste.jpg"
+      },
+      {
+        "name": "Abflug",
+        "path": "images/project1/flugzeug.jpg",
+        "thumb": "thumbs\\images\\project1\\flugzeug.jpg"
+      },
+      {
+        "name": "Gute Nacht Marokko",
+        "path": "images/project1/sonnenuntergang.jpg",
+        "thumb": "thumbs\\images\\project1\\sonnenuntergang.jpg"
+      },
+      {
+        "name": "Herr über die Nacht",
+        "path": "images/project1/katze.jpg",
+        "thumb": "thumbs\\images\\project1\\katze.jpg"
+      }
     ]
   },
   {
     "id": "mappe-2",
     "name": "İstanbul",
     "images": [
-      { "name": "Letzter Stopp", "path": "images/istanbul/schwarzmeer.jpg" },
-      { "name": "Blick hinaus", "path": "images/istanbul/blick.jpg" },
-      { "name": "Spiegelbild", "path": "images/istanbul/portrait.jpg" },
-      { "name": "Charisma", "path": "images/istanbul/zwinker.jpg" },
-      { "name": "Kaffeepause", "path": "images/istanbul/kaffee.jpg" },
-      { "name": "Drahtseilakt", "path": "images/istanbul/taube.jpg" },
-      { "name": "Chateau", "path": "images/istanbul/teppich.jpg" },
-      { "name": "Weg nach unten", "path": "images/istanbul/treppe.jpg" },
-      { "name": "Den Letzten fressen die Katzen", "path": "images/istanbul/grab.jpg" }
+      {
+        "name": "Letzter Stopp",
+        "path": "images/istanbul/schwarzmeer.jpg",
+        "thumb": "thumbs\\images\\istanbul\\schwarzmeer.jpg"
+      },
+      {
+        "name": "Blick hinaus",
+        "path": "images/istanbul/blick.jpg",
+        "thumb": "thumbs\\images\\istanbul\\blick.jpg"
+      },
+      {
+        "name": "Spiegelbild",
+        "path": "images/istanbul/portrait.jpg",
+        "thumb": "thumbs\\images\\istanbul\\portrait.jpg"
+      },
+      {
+        "name": "Charisma",
+        "path": "images/istanbul/zwinker.jpg",
+        "thumb": "thumbs\\images\\istanbul\\zwinker.jpg"
+      },
+      {
+        "name": "Kaffeepause",
+        "path": "images/istanbul/kaffee.jpg",
+        "thumb": "thumbs\\images\\istanbul\\kaffee.jpg"
+      },
+      {
+        "name": "Drahtseilakt",
+        "path": "images/istanbul/taube.jpg",
+        "thumb": "thumbs\\images\\istanbul\\taube.jpg"
+      },
+      {
+        "name": "Chateau",
+        "path": "images/istanbul/teppich.jpg",
+        "thumb": "thumbs\\images\\istanbul\\teppich.jpg"
+      },
+      {
+        "name": "Weg nach unten",
+        "path": "images/istanbul/treppe.jpg",
+        "thumb": "thumbs\\images\\istanbul\\treppe.jpg"
+      },
+      {
+        "name": "Den Letzten fressen die Katzen",
+        "path": "images/istanbul/grab.jpg",
+        "thumb": "thumbs\\images\\istanbul\\grab.jpg"
+      }
     ]
   }
 ]

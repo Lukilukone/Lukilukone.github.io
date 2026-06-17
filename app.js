@@ -73,11 +73,13 @@
     card.className = 'folder-card fade-in';
 
     // Automatisch das erste Bild der Mappe als Cover nutzen
+    // (nutzt die kleine Vorschauversion, falls vorhanden, statt des Originals)
     const hasImages = project.images && project.images.length > 0;
-    const coverPath = hasImages ? project.images[0].path : null;
+    const coverImg = hasImages ? project.images[0] : null;
+    const coverPath = coverImg ? (coverImg.thumb || coverImg.path) : null;
 
     const thumbInner = coverPath
-      ? `<img src="${coverPath}" alt="${escapeHtml(project.name)}">`
+      ? `<img src="${coverPath}" alt="${escapeHtml(project.name)}" loading="lazy" decoding="async">`
       : `<div class="folder-thumb-empty">
            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25"><path d="M3 3l18 18M21 15V5a2 2 0 00-2-2H8M3 9v10a2 2 0 002 2h10M9 13a2 2 0 100-4 2 2 0 000 4z"/></svg>
            <span>leere Rolle</span>
@@ -143,9 +145,13 @@
     const isCover = index === 0;
     const tile = document.createElement('div');
     tile.className = 'image-tile fade-in';
+    // Im Grid wird die kleine Vorschauversion (thumb) angezeigt, nicht das
+    // Originalbild — das spart Ladezeit und macht das Scrollen flüssig.
+    // Das Originalbild (path) wird erst in der Lightbox nachgeladen.
+    const previewSrc = image.thumb || image.path;
     tile.innerHTML = `
       <button class="image-thumb" data-action="open">
-        <img src="${image.path}" alt="${escapeHtml(image.name)}">
+        <img src="${previewSrc}" alt="${escapeHtml(image.name)}" loading="lazy" decoding="async">
         <span class="tag-num">Nº ${num}</span>
         ${isCover ? `<span class="cover-badge" title="Titelbild">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></polygon></svg>
@@ -186,8 +192,26 @@
   function renderLightbox() {
     const img = images[lightboxIndex];
     if (!img) { closeLightbox(); return; }
-    lbImage.src = img.path;
+
+    // Zuerst das bereits geladene Vorschaubild anzeigen (kein Warten/Flackern),
+    // danach im Hintergrund das hochauflösende Original laden und austauschen.
+    const previewSrc = img.thumb || img.path;
+    lbImage.src = previewSrc;
     lbImage.alt = img.name;
+    lbImage.classList.toggle('lb-image-loading', !!img.thumb && img.thumb !== img.path);
+
+    if (img.thumb && img.thumb !== img.path) {
+      const fullImg = new Image();
+      fullImg.onload = () => {
+        // Nur austauschen, wenn der Nutzer währenddessen nicht weitergeblättert hat
+        if (images[lightboxIndex] === img) {
+          lbImage.src = img.path;
+          lbImage.classList.remove('lb-image-loading');
+        }
+      };
+      fullImg.src = img.path;
+    }
+
     const num = String(lightboxIndex + 1).padStart(2, '0');
     const total = String(images.length).padStart(2, '0');
     lbCaption.innerHTML = `<span class="lb-index">Nº ${num}</span> / ${total}<span class="lb-name">${escapeHtml(img.name)}</span>`;

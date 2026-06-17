@@ -363,6 +363,8 @@ img { display: block; max-width: 100%; }
   border: 1px solid var(--border);
   background: var(--surface);
   display: block;
+  content-visibility: auto;
+  contain-intrinsic-size: 300px 300px;
 }
 .image-thumb img {
   width: 100%;
@@ -430,6 +432,10 @@ img { display: block; max-width: 100%; }
   max-width: 100%;
   object-fit: contain;
   border: 4px solid var(--paper);
+  transition: filter 0.25s ease;
+}
+.lb-image-loading {
+  filter: blur(2px);
 }
 .lb-caption {
   margin-top: 1rem;
