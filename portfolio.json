@@ -121,10 +121,10 @@
     "name": "İstanbul",
     "images": [
       {
-        "name": "Letzter Stopp",
-        "path": "images/istanbul/schwarzmeer.jpg",
-        "thumb": "thumbs\\images\\istanbul\\schwarzmeer.jpg",
-        "cover": "covers\\images\\istanbul\\schwarzmeer.jpg"
+        "name": "Charisma",
+        "path": "images/istanbul/zwinker.jpg",
+        "thumb": "thumbs\\images\\istanbul\\zwinker.jpg",
+        "cover": "covers\\images\\istanbul\\zwinker.jpg"
       },
       {
         "name": "Blick hinaus",
@@ -137,9 +137,9 @@
         "thumb": "thumbs\\images\\istanbul\\portrait.jpg"
       },
       {
-        "name": "Charisma",
-        "path": "images/istanbul/zwinker.jpg",
-        "thumb": "thumbs\\images\\istanbul\\zwinker.jpg"
+        "name": "Letzter Stopp",
+        "path": "images/istanbul/schwarzmeer.jpg",
+        "thumb": "thumbs\\images\\istanbul\\schwarzmeer.jpg"
       },
       {
         "name": "Kaffeepause",
