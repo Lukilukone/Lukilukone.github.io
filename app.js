@@ -32,6 +32,14 @@
   const toast = $('toast');
   const toastText = $('toast-text');
 
+  const navToggle = $('nav-toggle');
+  const navMenu = $('nav-menu');
+  const navIconOpen = document.querySelector('.nav-icon-open');
+  const navIconClose = document.querySelector('.nav-icon-close');
+  const viewInfo = $('view-info');
+  const viewContact = $('view-contact');
+  const impressumOverlay = $('impressum-overlay');
+
   function escapeHtml(str) {
     const div = document.createElement('div');
     div.textContent = str;
@@ -41,6 +49,18 @@
   function showToast(message) {
     if (message) toastText.textContent = message;
     toast.hidden = false;
+  }
+
+  // Blendet ein <img> sanft ein, sobald es tatsächlich geladen ist (statt
+  // abrupt zu erscheinen, sobald der Browser es ins Layout einsetzt).
+  // Bereits aus dem Cache geladene Bilder (complete === true) werden direkt
+  // sichtbar, ohne unnötige Wartezeit auf ein onload-Event, das nie kommt.
+  function fadeInWhenLoaded(imgEl) {
+    if (imgEl.complete && imgEl.naturalWidth > 0) {
+      imgEl.classList.add('loaded');
+    } else {
+      imgEl.addEventListener('load', () => imgEl.classList.add('loaded'), { once: true });
+    }
   }
 
   // ---------------------------------------------------------------
@@ -112,6 +132,8 @@
     `;
 
     card.querySelector('[data-action="open"]').addEventListener('click', () => openProject(project.id));
+    const coverImgEl = card.querySelector('.folder-thumb img');
+    if (coverImgEl) fadeInWhenLoaded(coverImgEl);
     return card;
   }
 
@@ -160,6 +182,12 @@
     // Originalbild — das spart Ladezeit und macht das Scrollen flüssig.
     // Das Originalbild (path) wird erst in der Lightbox nachgeladen.
     const previewSrc = image.thumb || image.path;
+    // Das Seitenverhältnis (aus portfolio.json, von generate_thumbnails.py
+    // ermittelt) legt die Breite der Kachel fest, bei einheitlicher Höhe —
+    // dadurch reserviert der Browser sofort den richtigen Platz, ohne dass
+    // das Layout springt, sobald das Bild lädt. Fallback: 1:1 (Quadrat).
+    const ratio = image.ratio || 1;
+    tile.style.aspectRatio = String(ratio);
     tile.innerHTML = `
       <button class="image-thumb" data-action="open">
         <img src="${previewSrc}" alt="${escapeHtml(image.name)}" loading="lazy" decoding="async">
@@ -171,7 +199,67 @@
     `;
 
     tile.querySelector('[data-action="open"]').addEventListener('click', () => openLightbox(index));
+    fadeInWhenLoaded(tile.querySelector('.image-thumb img'));
     return tile;
+  }
+
+  // ---------------------------------------------------------------
+  // Tab-Navigation (Galerie / Info / Kontakt)
+  // ---------------------------------------------------------------
+  function showTab(tab) {
+    // Alle Top-Level-Views verstecken, dann die passende(n) wieder zeigen
+    viewInfo.hidden = tab !== 'info';
+    viewContact.hidden = tab !== 'contact';
+
+    if (tab === 'gallery') {
+      // Innerhalb des Galerie-Tabs entscheidet currentId, ob der
+      // Mappen-Index oder eine geöffnete Mappe gezeigt wird.
+      if (currentId) {
+        viewHome.hidden = true;
+        viewGallery.hidden = false;
+      } else {
+        viewHome.hidden = false;
+        viewGallery.hidden = true;
+      }
+    } else {
+      viewHome.hidden = true;
+      viewGallery.hidden = true;
+    }
+
+    document.querySelectorAll('.nav-item').forEach((el) => {
+      el.classList.toggle('active', el.dataset.tab === tab);
+    });
+
+    closeNavMenu();
+  }
+
+  function openNavMenu() {
+    navMenu.hidden = false;
+    navToggle.classList.add('open');
+    navToggle.setAttribute('aria-expanded', 'true');
+    navIconOpen.hidden = true;
+    navIconClose.hidden = false;
+  }
+
+  function closeNavMenu() {
+    navMenu.hidden = true;
+    navToggle.classList.remove('open');
+    navToggle.setAttribute('aria-expanded', 'false');
+    navIconOpen.hidden = false;
+    navIconClose.hidden = true;
+  }
+
+  function toggleNavMenu() {
+    if (navMenu.hidden) openNavMenu();
+    else closeNavMenu();
+  }
+
+  function openImpressum() {
+    impressumOverlay.hidden = false;
+  }
+
+  function closeImpressum() {
+    impressumOverlay.hidden = true;
   }
 
   // ---------------------------------------------------------------
@@ -209,23 +297,31 @@
 
     // Lädt direkt das Originalbild — kein Zwischenschritt über das
     // Thumbnail, damit die Bildgröße beim Öffnen nicht "springt".
-    // Während des Ladens zeigt ein Spinner an, dass etwas passiert.
+    // Der Spinner blendet sich erst nach kurzer Verzögerung sanft ein
+    // (siehe CSS) und das Bild blendet beim Erscheinen sanft auf.
     lbImage.classList.add('lb-image-hidden');
     lbCaption.classList.add('lb-caption-hidden');
     lbSpinner.hidden = false;
+    lbSpinner.classList.add('lb-spinner-visible');
 
     const fullImg = new Image();
     fullImg.onload = () => {
       // Nur anzeigen, wenn der Nutzer währenddessen nicht weitergeblättert hat
       if (images[lightboxIndex] !== img) return;
+      lbSpinner.classList.remove('lb-spinner-visible');
+      lbSpinner.hidden = true;
       lbImage.src = img.path;
       lbImage.alt = img.name;
-      lbImage.classList.remove('lb-image-hidden');
       lbCaption.classList.remove('lb-caption-hidden');
-      lbSpinner.hidden = true;
+      // Eine Frame warten, damit der Browser die neue src kennt, bevor
+      // die Opacity-Transition für das sanfte Einblenden startet.
+      requestAnimationFrame(() => {
+        lbImage.classList.remove('lb-image-hidden');
+      });
     };
     fullImg.onerror = () => {
       if (images[lightboxIndex] !== img) return;
+      lbSpinner.classList.remove('lb-spinner-visible');
       lbSpinner.hidden = true;
       showToast('Bild konnte nicht geladen werden.');
     };
@@ -249,14 +345,36 @@
   });
 
   document.addEventListener('keydown', (e) => {
-    if (lightbox.hidden) return;
-    if (e.key === 'Escape') closeLightbox();
-    if (e.key === 'ArrowLeft') lightboxPrev();
-    if (e.key === 'ArrowRight') lightboxNext();
+    if (e.key !== 'Escape') {
+      if (!lightbox.hidden) {
+        if (e.key === 'ArrowLeft') lightboxPrev();
+        if (e.key === 'ArrowRight') lightboxNext();
+      }
+      return;
+    }
+    // Escape schließt zuerst die Lightbox, falls offen, sonst das Nav-Menü
+    if (!lightbox.hidden) closeLightbox();
+    else if (!navMenu.hidden) closeNavMenu();
+    else if (!impressumOverlay.hidden) closeImpressum();
   });
 
   $('toast-close').addEventListener('click', () => { toast.hidden = true; });
 
+  navToggle.addEventListener('click', toggleNavMenu);
+  document.querySelectorAll('.nav-item').forEach((el) => {
+    el.addEventListener('click', () => showTab(el.dataset.tab));
+  });
+  document.addEventListener('click', (e) => {
+    if (!navMenu.hidden && !e.target.closest('.site-nav')) closeNavMenu();
+  });
+
+  $('btn-impressum').addEventListener('click', openImpressum);
+  $('impressum-close').addEventListener('click', closeImpressum);
+  impressumOverlay.addEventListener('click', (e) => {
+    if (e.target === impressumOverlay) closeImpressum();
+  });
+
   // Start der Anwendung
+  showTab('gallery');
   initApp();
 })();

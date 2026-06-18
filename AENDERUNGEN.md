@@ -1,5 +1,58 @@
 # Änderungen
 
+## Update 3: Smoothere Animationen, einheitliche Kachelhöhen, Tab-Menü, Impressum
+
+**1. Smoothere Ladeanimation**
+- Bilder im Grid (Mappen-Cover und Bilder innerhalb einer Galerie) blenden
+  jetzt sanft ein, sobald sie tatsächlich geladen sind, statt abrupt zu
+  erscheinen.
+- Der Lade-Spinner in der Lightbox erscheint erst nach einer kurzen
+  Verzögerung (verhindert ein nerviges Aufblitzen bei schnell ladenden
+  Bildern) und blendet sanft ein/aus. Das Bild selbst blendet beim
+  Erscheinen sanft auf, statt abrupt zu wechseln.
+
+**2. Einheitliche Kachelhöhe in der Galerie**
+- Die Bilder-Kacheln innerhalb einer Mappe haben jetzt alle die gleiche
+  Höhe; die Breite richtet sich automatisch nach dem tatsächlichen
+  Seitenverhältnis jedes Bildes (klassisches "Justified Gallery"-Layout,
+  wie bei vielen Fotograf:innen-Portfolios).
+- Dafür ermittelt `generate_thumbnails.py` jetzt automatisch das
+  Seitenverhältnis jedes Bildes und trägt es als `"ratio"`-Feld in
+  `portfolio.json` ein. **Du musst das Skript daher einmal erneut
+  ausführen**, damit dieses Feld für deine bestehenden Bilder ergänzt
+  wird (vorhandene `thumb`/`cover`-Dateien werden dabei nicht neu
+  erzeugt, nur das fehlende `ratio`-Feld wird nachgetragen).
+- Das Mappen-Grid auf der Startseite bleibt bewusst quadratisch — das
+  wirkt dort wie ein Karteikarten-Index und war nicht Teil der Anfrage.
+
+**3. Ausklappbares Menü oben rechts**
+- Ein Hamburger-Menü-Symbol oben rechts öffnet ein Dropdown mit drei
+  Tabs: **Galerie** (Startbildschirm mit deinen Mappen), **Info** und
+  **Kontakt**.
+- Die Inhalte für Info und Kontakt sind als Platzhalter angelegt — siehe
+  Abschnitt "Eigene Inhalte eintragen" unten.
+
+**4. Impressum**
+- Am unteren Seitenrand erscheint ein dezenter "Impressum"-Link, der ein
+  kleines Overlay mit deinen Pflichtangaben öffnet.
+
+### Eigene Inhalte eintragen
+
+In `index.html` sind drei Stellen mit `<!-- TODO: ... -->`-Kommentaren
+markiert, an denen du eigene Inhalte eintragen solltest:
+
+1. **Info-Tab** — Beschreibung deiner fotografischen Ausrichtung/deines
+   Stils (sucht nach `view-info`)
+2. **Kontakt-Tab** — deine E-Mail-Adresse und Social-Media-Links (sucht
+   nach `view-contact`)
+3. **Impressum** — deine Pflichtangaben gemäß § 5 TMG (sucht nach
+   `impressum-overlay`)
+
+Einfach den Platzhaltertext zwischen den `<p>`-Tags durch deinen eigenen
+Text ersetzen.
+
+---
+
 ## Update: Lightbox ohne Größensprung + schärferes Mappen-Cover
 
 **Lightbox:** Beim Öffnen eines Bildes wird jetzt direkt das Originalbild

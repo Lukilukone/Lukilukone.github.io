@@ -11,10 +11,23 @@
 
 <div class="grain"></div>
 
+<!-- ============ NAV MENU ============ -->
+<nav class="site-nav">
+  <button class="nav-toggle" id="nav-toggle" aria-label="Menü öffnen" aria-expanded="false">
+    <svg class="nav-icon-open" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    <svg class="nav-icon-close" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" hidden><path d="M18 6L6 18M6 6l12 12"/></svg>
+  </button>
+  <div class="nav-menu" id="nav-menu" hidden>
+    <button class="nav-item" data-tab="gallery">Galerie</button>
+    <button class="nav-item" data-tab="info">Info</button>
+    <button class="nav-item" data-tab="contact">Kontakt</button>
+  </div>
+</nav>
+
 <div class="app" id="app">
 
-  <!-- ============ HOME VIEW ============ -->
-  <section id="view-home" class="view fade-in">
+  <!-- ============ HOME VIEW (Galerie: Mappen-Index) ============ -->
+  <section id="view-home" class="view fade-in" data-tab-content="gallery">
     <header class="home-header">
       <div class="home-header-top">
         <div>
@@ -30,8 +43,8 @@
     <div class="grid" id="folder-grid"></div>
   </section>
 
-  <!-- ============ GALLERY VIEW ============ -->
-  <section id="view-gallery" class="view fade-in" hidden>
+  <!-- ============ GALLERY VIEW (Mappen-Inhalt) ============ -->
+  <section id="view-gallery" class="view fade-in" data-tab-content="gallery" hidden>
     <button class="back-link" id="btn-back">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
       Zurück zum Index
@@ -48,6 +61,68 @@
     <div class="grid grid-images" id="image-grid"></div>
   </section>
 
+  <!-- ============ INFO VIEW ============ -->
+  <section id="view-info" class="view fade-in" data-tab-content="info" hidden>
+    <header class="home-header">
+      <h1 class="display-title">Info</h1>
+      <p class="meta-line">Über die Arbeit</p>
+    </header>
+    <div class="text-page">
+      <!-- TODO: Hier deine eigene Beschreibung der fotografischen
+           Ausrichtung/des Stils eintragen. -->
+      <p>
+        [Platzhalter: Beschreibung deiner fotografischen Ausrichtung und
+        deines Stils. Erzähl, was deine Arbeit ausmacht — bevorzugte Themen,
+        Herangehensweise, Technik, Inspiration.]
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT VIEW ============ -->
+  <section id="view-contact" class="view fade-in" data-tab-content="contact" hidden>
+    <header class="home-header">
+      <h1 class="display-title">Kontakt</h1>
+      <p class="meta-line">Erreichbarkeit</p>
+    </header>
+    <div class="text-page">
+      <p>
+        <!-- TODO: Eigene E-Mail-Adresse eintragen -->
+        E-Mail: <a class="text-link" href="mailto:deine-email@beispiel.de">deine-email@beispiel.de</a>
+      </p>
+      <p>
+        <!-- TODO: Eigene Social-Media-Links eintragen (z.B. Instagram) -->
+        Instagram: <a class="text-link" href="https://instagram.com/dein-profil" target="_blank" rel="noopener noreferrer">@dein-profil</a>
+      </p>
+    </div>
+  </section>
+
+</div>
+
+<!-- ============ IMPRESSUM (FOOTER) ============ -->
+<footer class="site-footer">
+  <button class="footer-link" id="btn-impressum">Impressum</button>
+</footer>
+
+<div id="impressum-overlay" class="confirm-overlay" hidden>
+  <div class="confirm-box impressum-box">
+    <h3>Impressum</h3>
+    <div class="text-page text-page-small">
+      <!-- TODO: Eigene Angaben gemäß § 5 TMG eintragen -->
+      <p>
+        [Platzhalter — bitte durch deine eigenen Pflichtangaben ersetzen]<br>
+        Vorname Nachname<br>
+        Straße Hausnummer<br>
+        PLZ Ort
+      </p>
+      <p>
+        Kontakt:<br>
+        E-Mail: deine-email@beispiel.de
+      </p>
+    </div>
+    <div class="confirm-actions">
+      <button class="btn-ghost" id="impressum-close">Schließen</button>
+    </div>
+  </div>
 </div>
 
 <!-- ============ LIGHTBOX ============ -->

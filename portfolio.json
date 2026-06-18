@@ -7,112 +7,134 @@
         "name": "Die Essenz Marokkos",
         "path": "images/project1/marokko.jpg",
         "thumb": "thumbs\\images\\project1\\marokko.jpg",
-        "cover": "covers\\images\\project1\\marokko.jpg"
+        "cover": "covers\\images\\project1\\marokko.jpg",
+        "ratio": 1.4989
       },
       {
         "name": "Geschäftiges Treiben",
         "path": "images/project1/mann.jpg",
-        "thumb": "thumbs\\images\\project1\\mann.jpg"
+        "thumb": "thumbs\\images\\project1\\mann.jpg",
+        "ratio": 1.4989
       },
       {
         "name": "Roller verboten",
         "path": "images/project1/roller.jpg",
-        "thumb": "thumbs\\images\\project1\\roller.jpg"
+        "thumb": "thumbs\\images\\project1\\roller.jpg",
+        "ratio": 1.4989
       },
       {
         "name": "Ökologische Fortbewegung",
         "path": "images/project1/fahrrad.jpg",
-        "thumb": "thumbs\\images\\project1\\fahrrad.jpg"
+        "thumb": "thumbs\\images\\project1\\fahrrad.jpg",
+        "ratio": 1.4989
       },
       {
         "name": "Durch Unten und Oben",
         "path": "images/project1/pfuetze.jpg",
-        "thumb": "thumbs\\images\\project1\\pfuetze.jpg"
+        "thumb": "thumbs\\images\\project1\\pfuetze.jpg",
+        "ratio": 1.4989
       },
       {
         "name": "Blaue Insel",
         "path": "images/project1/blau.jpg",
-        "thumb": "thumbs\\images\\project1\\blau.jpg"
+        "thumb": "thumbs\\images\\project1\\blau.jpg",
+        "ratio": 1.4989
       },
       {
         "name": "Wache über das Leder",
         "path": "images/project1/leder.jpg",
-        "thumb": "thumbs\\images\\project1\\leder.jpg"
+        "thumb": "thumbs\\images\\project1\\leder.jpg",
+        "ratio": 1.4989
       },
       {
         "name": "Einsames Besinnen",
         "path": "images/project1/aussicht.jpg",
-        "thumb": "thumbs\\images\\project1\\aussicht.jpg"
+        "thumb": "thumbs\\images\\project1\\aussicht.jpg",
+        "ratio": 1.4989
       },
       {
         "name": "Mobiles Café",
         "path": "images/project1/autocafe.jpg",
-        "thumb": "thumbs\\images\\project1\\autocafe.jpg"
+        "thumb": "thumbs\\images\\project1\\autocafe.jpg",
+        "ratio": 1.4989
       },
       {
         "name": "Zeit zu Zweit",
         "path": "images/project1/paar.jpg",
-        "thumb": "thumbs\\images\\project1\\paar.jpg"
+        "thumb": "thumbs\\images\\project1\\paar.jpg",
+        "ratio": 1.4989
       },
       {
         "name": "Vogelperspektive",
         "path": "images/project1/gondel.jpg",
-        "thumb": "thumbs\\images\\project1\\gondel.jpg"
+        "thumb": "thumbs\\images\\project1\\gondel.jpg",
+        "ratio": 1.4989
       },
       {
         "name": "Zwei Bretter und Zehn Beine",
         "path": "images/project1/kamel.jpg",
-        "thumb": "thumbs\\images\\project1\\kamel.jpg"
+        "thumb": "thumbs\\images\\project1\\kamel.jpg",
+        "ratio": 1.4989
       },
       {
         "name": "Dienstbote",
         "path": "images/project1/surf.jpg",
-        "thumb": "thumbs\\images\\project1\\surf.jpg"
+        "thumb": "thumbs\\images\\project1\\surf.jpg",
+        "ratio": 1.4989
       },
       {
         "name": "...der wird tief fallen",
         "path": "images/project1/fall.jpg",
-        "thumb": "thumbs\\images\\project1\\fall.jpg"
+        "thumb": "thumbs\\images\\project1\\fall.jpg",
+        "ratio": 1.4989
       },
       {
         "name": "Leitung",
         "path": "images/project1/leitung.jpg",
-        "thumb": "thumbs\\images\\project1\\leitung.jpg"
+        "thumb": "thumbs\\images\\project1\\leitung.jpg",
+        "ratio": 1.4989
       },
       {
         "name": "Zwischen Wasser und Sand",
         "path": "images/project1/karawane.jpg",
-        "thumb": "thumbs\\images\\project1\\karawane.jpg"
+        "thumb": "thumbs\\images\\project1\\karawane.jpg",
+        "ratio": 1.4989
       },
       {
         "name": "Wasser geht schlafen",
         "path": "images/project1/strand.jpg",
-        "thumb": "thumbs\\images\\project1\\strand.jpg"
+        "thumb": "thumbs\\images\\project1\\strand.jpg",
+        "ratio": 1.4989
       },
       {
         "name": "Abkühlung",
         "path": "images/project1/schwimmen.jpg",
-        "thumb": "thumbs\\images\\project1\\schwimmen.jpg"
+        "thumb": "thumbs\\images\\project1\\schwimmen.jpg",
+        "ratio": 1.4989
       },
       {
         "name": "Küstenabend",
         "path": "images/project1/kueste.jpg",
-        "thumb": "thumbs\\images\\project1\\kueste.jpg"
+        "thumb": "thumbs\\images\\project1\\kueste.jpg",
+        "ratio": 1.4989
       },
       {
         "name": "Abflug",
         "path": "images/project1/flugzeug.jpg",
-        "thumb": "thumbs\\images\\project1\\flugzeug.jpg"
+        "thumb": "thumbs\\images\\project1\\flugzeug.jpg",
+        "ratio": 1.4989
       },
       {
         "name": "Gute Nacht Marokko",
         "path": "images/project1/sonnenuntergang.jpg",
-        "thumb": "thumbs\\images\\project1\\sonnenuntergang.jpg"
+        "thumb": "thumbs\\images\\project1\\sonnenuntergang.jpg",
+        "ratio": 1.4989
       },
       {
         "name": "Herr über die Nacht",
         "path": "images/project1/katze.jpg",
-        "thumb": "thumbs\\images\\project1\\katze.jpg"
+        "thumb": "thumbs\\images\\project1\\katze.jpg",
+        "ratio": 1.4989
       }
     ]
   },
@@ -124,47 +146,56 @@
         "name": "Charisma",
         "path": "images/istanbul/zwinker.jpg",
         "thumb": "thumbs\\images\\istanbul\\zwinker.jpg",
-        "cover": "covers\\images\\istanbul\\zwinker.jpg"
+        "cover": "covers\\images\\istanbul\\zwinker.jpg",
+        "ratio": 1.4989
       },
       {
         "name": "Blick hinaus",
         "path": "images/istanbul/blick.jpg",
-        "thumb": "thumbs\\images\\istanbul\\blick.jpg"
+        "thumb": "thumbs\\images\\istanbul\\blick.jpg",
+        "ratio": 1.5021
       },
       {
         "name": "Spiegelbild",
         "path": "images/istanbul/portrait.jpg",
-        "thumb": "thumbs\\images\\istanbul\\portrait.jpg"
+        "thumb": "thumbs\\images\\istanbul\\portrait.jpg",
+        "ratio": 2.0
       },
       {
         "name": "Letzter Stopp",
         "path": "images/istanbul/schwarzmeer.jpg",
-        "thumb": "thumbs\\images\\istanbul\\schwarzmeer.jpg"
+        "thumb": "thumbs\\images\\istanbul\\schwarzmeer.jpg",
+        "ratio": 2.7344
       },
       {
         "name": "Kaffeepause",
         "path": "images/istanbul/kaffee.jpg",
-        "thumb": "thumbs\\images\\istanbul\\kaffee.jpg"
+        "thumb": "thumbs\\images\\istanbul\\kaffee.jpg",
+        "ratio": 1.4989
       },
       {
         "name": "Drahtseilakt",
         "path": "images/istanbul/taube.jpg",
-        "thumb": "thumbs\\images\\istanbul\\taube.jpg"
+        "thumb": "thumbs\\images\\istanbul\\taube.jpg",
+        "ratio": 1.4989
       },
       {
         "name": "Chateau",
         "path": "images/istanbul/teppich.jpg",
-        "thumb": "thumbs\\images\\istanbul\\teppich.jpg"
+        "thumb": "thumbs\\images\\istanbul\\teppich.jpg",
+        "ratio": 1.4989
       },
       {
         "name": "Weg nach unten",
         "path": "images/istanbul/treppe.jpg",
-        "thumb": "thumbs\\images\\istanbul\\treppe.jpg"
+        "thumb": "thumbs\\images\\istanbul\\treppe.jpg",
+        "ratio": 1.4989
       },
       {
         "name": "Den Letzten fressen die Katzen",
         "path": "images/istanbul/grab.jpg",
-        "thumb": "thumbs\\images\\istanbul\\grab.jpg"
+        "thumb": "thumbs\\images\\istanbul\\grab.jpg",
+        "ratio": 1.5766
       }
     ]
   }

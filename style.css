@@ -131,6 +131,99 @@ img { display: block; max-width: 100%; }
 .lock-btn:hover { color: var(--text); }
 .lock-btn.unlocked { color: var(--accent); border-color: var(--accent); }
 
+/* ---------- Site navigation (Hamburger-Menü) ---------- */
+.site-nav {
+  position: fixed;
+  top: 1.25rem;
+  right: 1.25rem;
+  z-index: 50;
+}
+@media (min-width: 640px) {
+  .site-nav { top: 1.75rem; right: 2rem; }
+}
+.nav-toggle {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text);
+  transition: border-color 0.2s, color 0.2s;
+}
+.nav-toggle:hover { border-color: var(--text-muted); }
+.nav-toggle.open { border-color: var(--accent); color: var(--accent); }
+
+.nav-menu {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  right: 0;
+  min-width: 160px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.nav-menu[hidden] { display: none; }
+.nav-item {
+  padding: 0.85rem 1.1rem;
+  text-align: left;
+  font-family: var(--mono);
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  border-bottom: 1px solid var(--border);
+  transition: background 0.15s, color 0.15s;
+}
+.nav-item:last-child { border-bottom: none; }
+.nav-item:hover { background: var(--accent-soft); color: var(--text); }
+.nav-item.active { color: var(--accent); }
+
+/* ---------- Text pages (Info / Kontakt) ---------- */
+.text-page {
+  max-width: 560px;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--text);
+}
+.text-page p { margin-bottom: 1rem; }
+.text-page p:last-child { margin-bottom: 0; }
+.text-page-small {
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+  max-width: none;
+}
+.text-link {
+  color: var(--accent);
+  text-decoration: underline;
+  text-decoration-color: var(--accent-soft);
+  text-underline-offset: 2px;
+  transition: text-decoration-color 0.2s;
+}
+.text-link:hover { text-decoration-color: var(--accent); }
+
+/* ---------- Footer / Impressum ---------- */
+.site-footer {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  padding: 1.5rem 0 2.5rem;
+}
+.footer-link {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  opacity: 0.65;
+  transition: opacity 0.2s;
+}
+.footer-link:hover { opacity: 1; }
+.impressum-box {
+  max-width: 420px;
+}
+
 .grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -142,15 +235,14 @@ img { display: block; max-width: 100%; }
 @media (min-width: 960px) {
   .grid { grid-template-columns: repeat(3, 1fr); }
 }
+/* Bilder-Grid innerhalb einer Mappe: alle Kacheln haben die gleiche Höhe,
+   die Breite richtet sich nach dem jeweiligen Seitenverhältnis des Bildes
+   (klassisches "Justified Gallery"-Layout statt starrer Quadrate). */
 .grid-images {
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
-}
-@media (min-width: 640px) {
-  .grid-images { grid-template-columns: repeat(3, 1fr); }
-}
-@media (min-width: 960px) {
-  .grid-images { grid-template-columns: repeat(4, 1fr); }
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 0.6rem;
 }
 
 /* ---------- Folder card ---------- */
@@ -170,7 +262,11 @@ img { display: block; max-width: 100%; }
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.5s ease;
+  opacity: 0;
+  transition: transform 0.5s ease, opacity 0.4s ease;
+}
+.folder-thumb img.loaded {
+  opacity: 1;
 }
 .folder-card:hover .folder-thumb img { transform: scale(1.05); }
 
@@ -354,23 +450,40 @@ img { display: block; max-width: 100%; }
 .upload-progress { margin-top: 0.5rem; font-family: var(--mono); font-size: 0.78rem; color: var(--accent); }
 
 /* ---------- Image tile ---------- */
-.image-tile { position: relative; }
+.image-tile {
+  position: relative;
+  height: 220px;
+  /* width ergibt sich aus dem inline gesetzten aspect-ratio (siehe app.js) */
+}
+@media (min-width: 640px) {
+  .image-tile { height: 260px; }
+}
+@media (min-width: 960px) {
+  .image-tile { height: 300px; }
+}
 .image-thumb {
   position: relative;
+  height: 100%;
   width: 100%;
-  aspect-ratio: 1 / 1;
+  /* aspect-ratio kommt inline pro Bild aus portfolio.json (Feld "ratio"),
+     damit der Browser sofort die richtige Breite reserviert und das
+     Layout nicht springt, sobald das Bild geladen ist. */
   overflow: hidden;
   border: 1px solid var(--border);
   background: var(--surface);
   display: block;
   content-visibility: auto;
-  contain-intrinsic-size: 300px 300px;
+  contain-intrinsic-size: 300px 220px;
 }
 .image-thumb img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.3s ease;
+  opacity: 0;
+  transition: opacity 0.4s ease, transform 0.3s ease;
+}
+.image-thumb img.loaded {
+  opacity: 1;
 }
 .image-tile:hover .image-thumb img { transform: scale(1.05); }
 
@@ -432,9 +545,13 @@ img { display: block; max-width: 100%; }
   max-width: 100%;
   object-fit: contain;
   border: 4px solid var(--paper);
+  opacity: 1;
+  transition: opacity 0.35s ease;
 }
 .lb-image-hidden {
-  display: none;
+  opacity: 0;
+  position: absolute;
+  pointer-events: none;
 }
 .lb-spinner {
   display: flex;
@@ -442,6 +559,11 @@ img { display: block; max-width: 100%; }
   justify-content: center;
   color: var(--text-muted);
   padding: 3rem;
+  opacity: 0;
+  transition: opacity 0.2s ease 0.15s;
+}
+.lb-spinner.lb-spinner-visible {
+  opacity: 1;
 }
 .lb-spinner[hidden] { display: none; }
 .lb-caption {
