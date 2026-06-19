@@ -452,8 +452,11 @@ img { display: block; max-width: 100%; }
 /* ---------- Image tile ---------- */
 .image-tile {
   position: relative;
+  /* Fallback-Höhe, bevor das Justified-Gallery-Skript (app.js) die
+     tatsächliche Höhe/Breite pro Zeile berechnet und per Inline-Style
+     setzt. Verhindert ein kurzes "Zusammenklappen" des Grids, falls JS
+     minimal verzögert startet. */
   height: 220px;
-  /* width ergibt sich aus dem inline gesetzten aspect-ratio (siehe app.js) */
 }
 @media (min-width: 640px) {
   .image-tile { height: 260px; }
@@ -465,9 +468,6 @@ img { display: block; max-width: 100%; }
   position: relative;
   height: 100%;
   width: 100%;
-  /* aspect-ratio kommt inline pro Bild aus portfolio.json (Feld "ratio"),
-     damit der Browser sofort die richtige Breite reserviert und das
-     Layout nicht springt, sobald das Bild geladen ist. */
   overflow: hidden;
   border: 1px solid var(--border);
   background: var(--surface);
@@ -550,8 +550,6 @@ img { display: block; max-width: 100%; }
 }
 .lb-image-hidden {
   opacity: 0;
-  position: absolute;
-  pointer-events: none;
 }
 .lb-spinner {
   display: flex;
@@ -573,9 +571,15 @@ img { display: block; max-width: 100%; }
   color: var(--text-muted);
   font-size: 0.85rem;
   padding: 0 1rem;
+  /* Feste Mindesthöhe reserviert immer Platz, ob Text drin ist oder
+     nicht — verhindert, dass das Bild beim Wechseln zwischen Bildern
+     nach unten "springt", während die Caption kurz leer ist. */
+  min-height: 2.4rem;
+  opacity: 1;
+  transition: opacity 0.2s ease;
 }
 .lb-caption-hidden {
-  display: none;
+  opacity: 0;
 }
 .lb-caption .lb-index { color: var(--accent); }
 .lb-caption .lb-name {
@@ -590,7 +594,7 @@ img { display: block; max-width: 100%; }
   white-space: nowrap;
 }
 @media (min-width: 640px) {
-  .lb-caption:not(.lb-caption-hidden) .lb-name { display: inline; margin-left: 0.75rem; margin-top: 0; }
+  .lb-caption .lb-name { display: inline; margin-left: 0.75rem; margin-top: 0; }
 }
 
 .lb-close, .lb-delete, .lb-prev, .lb-next {

@@ -187,7 +187,9 @@
       },
       {
         "name": "Zitronen",
-        "path": "images/istanbul/zitronen.jpg"
+        "path": "images/istanbul/zitronen.jpg",
+        "thumb": "thumbs\\images\\istanbul\\zitronen.jpg",
+        "ratio": 1.4644
       },
       {
         "name": "Weg nach unten",
@@ -209,27 +211,40 @@
     "images": [
       {
         "name": "Monegassen",
-        "path": "images/monaco/soldaten.jpg"
+        "path": "images/monaco/soldaten.jpg",
+        "thumb": "thumbs\\images\\monaco\\soldaten.jpg",
+        "ratio": 1.4989,
+        "cover": "covers\\images\\monaco\\soldaten.jpg"
       },
       {
         "name": "Schichtwechsel",
-        "path": "images/monaco/spalier.jpg"
+        "path": "images/monaco/spalier.jpg",
+        "thumb": "thumbs\\images\\monaco\\spalier.jpg",
+        "ratio": 1.4989
       },
       {
         "name": "Observation",
-        "path": "images/monaco/maedchen.jpg"
+        "path": "images/monaco/maedchen.jpg",
+        "thumb": "thumbs\\images\\monaco\\maedchen.jpg",
+        "ratio": 1.4989
       },
       {
         "name": "Geld entspannt",
-        "path": "images/monaco/liegestuhl.jpg"
+        "path": "images/monaco/liegestuhl.jpg",
+        "thumb": "thumbs\\images\\monaco\\liegestuhl.jpg",
+        "ratio": 1.4989
       },
       {
         "name": "Hier wird gespielt",
-        "path": "images/monaco/stadion.jpg"
+        "path": "images/monaco/stadion.jpg",
+        "thumb": "thumbs\\images\\monaco\\stadion.jpg",
+        "ratio": 1.4989
       },
       {
         "name": "Monaco",
-        "path": "images/monaco/monaco.jpg"
+        "path": "images/monaco/monaco.jpg",
+        "thumb": "thumbs\\images\\monaco\\monaco.jpg",
+        "ratio": 1.4989
       }
     ]
   },
@@ -239,39 +254,58 @@
     "images": [
       {
         "name": "Prag",
-        "path": "images/prag/kathedrale.jpg"
+        "path": "images/prag/kathedrale.jpg",
+        "thumb": "thumbs\\images\\prag\\kathedrale.jpg",
+        "ratio": 1.4989,
+        "cover": "covers\\images\\prag\\kathedrale.jpg"
       },
       {
         "name": "Moldau",
-        "path": "images/prag/bruecke.jpg"
+        "path": "images/prag/bruecke.jpg",
+        "thumb": "thumbs\\images\\prag\\bruecke.jpg",
+        "ratio": 1.4989
       },
       {
         "name": "Verkehr",
-        "path": "images/prag/wasser.jpg"
+        "path": "images/prag/wasser.jpg",
+        "thumb": "thumbs\\images\\prag\\wasser.jpg",
+        "ratio": 1.4989
       },
       {
         "name": "Urlaub",
-        "path": "images/prag/boot.jpg"
+        "path": "images/prag/boot.jpg",
+        "thumb": "thumbs\\images\\prag\\boot.jpg",
+        "ratio": 1.4989
       },
       {
         "name": "Feuer",
-        "path": "images/prag/revolution.jpg"
+        "path": "images/prag/revolution.jpg",
+        "thumb": "thumbs\\images\\prag\\revolution.jpg",
+        "ratio": 1.4989
       },
       {
         "name": "Viel zu tun",
-        "path": "images/prag/tattoo.jpg"
+        "path": "images/prag/tattoo.jpg",
+        "thumb": "thumbs\\images\\prag\\tattoo.jpg",
+        "ratio": 1.4989
       },
       {
         "name": "Aperol",
-        "path": "images/prag/aperol.jpg"
+        "path": "images/prag/aperol.jpg",
+        "thumb": "thumbs\\images\\prag\\aperol.jpg",
+        "ratio": 1.4989
       },
       {
         "name": "Kurz vor dem Absprung",
-        "path": "images/prag/absprung.jpg"
+        "path": "images/prag/absprung.jpg",
+        "thumb": "thumbs\\images\\prag\\absprung.jpg",
+        "ratio": 1.4989
       },
       {
         "name": "Gute Nacht Prag",
-        "path": "images/prag/abendrot.jpg"
+        "path": "images/prag/abendrot.jpg",
+        "thumb": "thumbs\\images\\prag\\abendrot.jpg",
+        "ratio": 1.4989
       }
     ]
   },
@@ -281,47 +315,70 @@
     "images": [
       {
         "name": "Menton",
-        "path": "images/azur/stadt.jpg"
+        "path": "images/azur/stadt.jpg",
+        "thumb": "thumbs\\images\\azur\\stadt.jpg",
+        "ratio": 1.4989,
+        "cover": "covers\\images\\azur\\stadt.jpg"
       },
       {
         "name": "Schichten",
-        "path": "images/azur/kirche.jpg"
+        "path": "images/azur/kirche.jpg",
+        "thumb": "thumbs\\images\\azur\\kirche.jpg",
+        "ratio": 1.4989
       },
       {
         "name": "Weinberge",
-        "path": "images/azur/berg.jpg"
+        "path": "images/azur/berg.jpg",
+        "thumb": "thumbs\\images\\azur\\berg.jpg",
+        "ratio": 1.4989
       },
       {
         "name": "Pause",
-        "path": "images/azur/handy.jpg"
+        "path": "images/azur/handy.jpg",
+        "thumb": "thumbs\\images\\azur\\handy.jpg",
+        "ratio": 1.4989
       },
       {
         "name": "Guter Schlaf",
-        "path": "images/azur/schlafen.jpg"
+        "path": "images/azur/schlafen.jpg",
+        "thumb": "thumbs\\images\\azur\\schlafen.jpg",
+        "ratio": 1.4989
       },
       {
         "name": "Gutes Buch",
-        "path": "images/azur/lesen.jpg"
+        "path": "images/azur/lesen.jpg",
+        "thumb": "thumbs\\images\\azur\\lesen.jpg",
+        "ratio": 1.4989
       },
       {
         "name": "Ausstieg",
-        "path": "images/azur/station.jpg"
+        "path": "images/azur/station.jpg",
+        "thumb": "thumbs\\images\\azur\\station.jpg",
+        "ratio": 1.4989
       },
       {
         "name": "Kaktusblüte",
-        "path": "images/azur/bluete.jpg"
+        "path": "images/azur/bluete.jpg",
+        "thumb": "thumbs\\images\\azur\\bluete.jpg",
+        "ratio": 1.4989
       },
       {
         "name": "Kaktus",
-        "path": "images/azur/kaktus.jpg"
+        "path": "images/azur/kaktus.jpg",
+        "thumb": "thumbs\\images\\azur\\kaktus.jpg",
+        "ratio": 1.4989
       },
       {
         "name": "Hibiskus",
-        "path": "images/azur/bluete2.jpg"
+        "path": "images/azur/bluete2.jpg",
+        "thumb": "thumbs\\images\\azur\\bluete2.jpg",
+        "ratio": 1.4989
       },
       {
         "name": "Auf Wiedersehen",
-        "path": "images/azur/katze.jpg"
+        "path": "images/azur/katze.jpg",
+        "thumb": "thumbs\\images\\azur\\katze.jpg",
+        "ratio": 1.4989
       }
     ]
   },
@@ -331,27 +388,40 @@
     "images": [
       {
         "name": "Kette",
-        "path": "images/dresden/riesenrad.jpg"
+        "path": "images/dresden/riesenrad.jpg",
+        "thumb": "thumbs\\images\\dresden\\riesenrad.jpg",
+        "ratio": 1.4989,
+        "cover": "covers\\images\\dresden\\riesenrad.jpg"
       },
       {
         "name": "Goldener Reiter",
-        "path": "images/dresden/gold.jpg"
+        "path": "images/dresden/gold.jpg",
+        "thumb": "thumbs\\images\\dresden\\gold.jpg",
+        "ratio": 1.4989
       },
       {
         "name": "Spiegelung",
-        "path": "images/dresden/spiegelung.jpg"
+        "path": "images/dresden/spiegelung.jpg",
+        "thumb": "thumbs\\images\\dresden\\spiegelung.jpg",
+        "ratio": 1.4989
       },
       {
         "name": "Blau trifft Blau",
-        "path": "images/dresden/blau.jpg"
+        "path": "images/dresden/blau.jpg",
+        "thumb": "thumbs\\images\\dresden\\blau.jpg",
+        "ratio": 1.4989
       },
       {
         "name": "Alles in der Hand",
-        "path": "images/dresden/statue.jpg"
+        "path": "images/dresden/statue.jpg",
+        "thumb": "thumbs\\images\\dresden\\statue.jpg",
+        "ratio": 1.4989
       },
       {
         "name": "Feierabend",
-        "path": "images/dresden/bier.jpg"
+        "path": "images/dresden/bier.jpg",
+        "thumb": "thumbs\\images\\dresden\\bier.jpg",
+        "ratio": 1.4989
       }
     ]
   },
@@ -361,35 +431,52 @@
     "images": [
       {
         "name": "Blüte",
-        "path": "images/lissabon/blume.jpg"
+        "path": "images/lissabon/blume.jpg",
+        "thumb": "thumbs\\images\\lissabon\\blume.jpg",
+        "ratio": 1.4989,
+        "cover": "covers\\images\\lissabon\\blume.jpg"
       },
       {
         "name": "Blick in den Hof",
-        "path": "images/lissabon/burg.jpg"
+        "path": "images/lissabon/burg.jpg",
+        "thumb": "thumbs\\images\\lissabon\\burg.jpg",
+        "ratio": 1.4989
       },
       {
         "name": "Erinnerung",
-        "path": "images/lissabon/foto.jpg"
+        "path": "images/lissabon/foto.jpg",
+        "thumb": "thumbs\\images\\lissabon\\foto.jpg",
+        "ratio": 1.4989
       },
       {
         "name": "Blick zurück",
-        "path": "images/lissabon/taube.jpg"
+        "path": "images/lissabon/taube.jpg",
+        "thumb": "thumbs\\images\\lissabon\\taube.jpg",
+        "ratio": 1.4989
       },
       {
         "name": "Geheiligt",
-        "path": "images/lissabon/heilig.jpg"
+        "path": "images/lissabon/heilig.jpg",
+        "thumb": "thumbs\\images\\lissabon\\heilig.jpg",
+        "ratio": 1.4989
       },
       {
         "name": "Kleiner Prinz",
-        "path": "images/lissabon/kleinerprinz.jpg"
+        "path": "images/lissabon/kleinerprinz.jpg",
+        "thumb": "thumbs\\images\\lissabon\\kleinerprinz.jpg",
+        "ratio": 1.4989
       },
       {
         "name": "Neugier",
-        "path": "images/lissabon/neugier.jpg"
+        "path": "images/lissabon/neugier.jpg",
+        "thumb": "thumbs\\images\\lissabon\\neugier.jpg",
+        "ratio": 1.4989
       },
       {
         "name": "Wolkenmeer",
-        "path": "images/lissabon/wolken.jpg"
+        "path": "images/lissabon/wolken.jpg",
+        "thumb": "thumbs\\images\\lissabon\\wolken.jpg",
+        "ratio": 1.4989
       }
     ]
   }

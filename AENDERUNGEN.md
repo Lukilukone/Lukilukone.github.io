@@ -1,5 +1,37 @@
 # Änderungen
 
+## Update 4: Lightbox-Sprung behoben, Grid komplett überarbeitet (Justified Gallery)
+
+**1. Bild-Sprung beim Wechseln in der Lightbox behoben**
+
+Die Ursache war wie vermutet die Bildunterschrift: Sie wurde beim
+Bildwechsel kurz komplett ausgeblendet (`display: none`), wodurch sich
+die Höhe des Lightbox-Inhalts änderte und das Bild nach unten rutschte.
+Die Caption hat jetzt eine feste Mindesthöhe und wird nur noch per
+Transparenz ein-/ausgeblendet, nie über `display`. Das Bild bleibt beim
+Wechseln zwischen Bildern jetzt an exakt derselben Position.
+
+**2. Bilder-Grid: "Justified Gallery"-Layout statt unregelmäßigem Flex-Wrap**
+
+Vorher wurden Bilder einfach so lange in eine Zeile gepackt, bis keines
+mehr passte — das führte dazu, dass manche Zeilen nur 1 (sehr breites)
+Bild enthielten, andere 3-4, was unaufgeräumt wirkte.
+
+Jetzt berechnet ein kleines Layout-Skript (in `app.js`) für jede Zeile
+die exakt passende Höhe, sodass jede Zeile randscharf die volle Breite
+ausfüllt — genau wie bei den bekannten "Justified Gallery"-Layouts (z.B.
+Google Photos, Flickr). Die Zielhöhe passt sich responsive an die
+Bildschirmbreite an (niedriger auf dem Handy, höher auf Desktop), und
+die letzte, unvollständige Zeile wird nicht künstlich aufgebläht.
+
+Das Layout berechnet sich automatisch neu bei Fenstergrößenänderung
+sowie beim Zurückwechseln zum Galerie-Tab. Es greift auf das bereits
+vorhandene `"ratio"`-Feld in `portfolio.json` zurück — falls du das
+Skript schon einmal mit der ratio-Berechnung laufen lassen hast, ist
+hier kein erneuter Lauf nötig.
+
+---
+
 ## Update 3: Smoothere Animationen, einheitliche Kachelhöhen, Tab-Menü, Impressum
 
 **1. Smoothere Ladeanimation**

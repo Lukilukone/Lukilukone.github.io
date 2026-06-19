@@ -171,7 +171,84 @@
     images.forEach((img, i) => {
       imageGrid.appendChild(buildImageTile(img, i));
     });
+    layoutJustifiedGrid();
   }
+
+  // ---------------------------------------------------------------
+  // "Justified Gallery"-Layout: ordnet Bilder zeilenweise so an, dass
+  // jede Zeile die volle Breite exakt ausfüllt (Höhe wird pro Zeile leicht
+  // angepasst), statt dass Zeilen mal mit 1, mal mit 4 Bildern wirken
+  // unaufgeräumt nebeneinander stehen.
+  // ---------------------------------------------------------------
+  const GRID_GAP = 10;           // muss zum CSS-"gap" von .grid-images passen
+
+  function getTargetRowHeight(containerWidth) {
+    // Auf schmalen Bildschirmen niedrigere Zielhöhe, damit dort noch
+    // sinnvoll mehrere Bilder pro Zeile passen, statt dass jede Zeile
+    // nur ein einzelnes, sehr breites Bild enthält.
+    if (containerWidth < 480) return 150;
+    if (containerWidth < 768) return 200;
+    return 260;
+  }
+
+  function layoutJustifiedGrid() {
+    const tiles = Array.from(imageGrid.children);
+    if (tiles.length === 0) return;
+
+    const containerWidth = imageGrid.clientWidth;
+    if (containerWidth === 0) return; // Grid gerade nicht sichtbar (anderer Tab)
+
+    const targetRowHeight = getTargetRowHeight(containerWidth);
+
+    let row = [];
+    let rowRatioSum = 0;
+
+    const flushRow = (isLastRow) => {
+      if (row.length === 0) return;
+
+      const totalGapWidth = GRID_GAP * (row.length - 1);
+      let rowHeight = (containerWidth - totalGapWidth) / rowRatioSum;
+
+      // Die letzte Zeile nicht künstlich aufblasen, falls nur wenige
+      // Bilder übrig sind (sonst würden 1-2 Bilder riesig gestreckt).
+      if (isLastRow && rowHeight > targetRowHeight * 1.25) {
+        rowHeight = targetRowHeight;
+      }
+
+      row.forEach(({ tile, ratio }) => {
+        tile.style.height = `${rowHeight}px`;
+        tile.style.width = `${rowHeight * ratio}px`;
+        tile.style.flexGrow = '0';
+      });
+
+      row = [];
+      rowRatioSum = 0;
+    };
+
+    tiles.forEach((tile, i) => {
+      const ratio = parseFloat(tile.dataset.ratio) || 1;
+      row.push({ tile, ratio });
+      rowRatioSum += ratio;
+
+      const projectedWidth = targetRowHeight * rowRatioSum + GRID_GAP * (row.length - 1);
+      const isLast = i === tiles.length - 1;
+
+      if (projectedWidth >= containerWidth) {
+        flushRow(false);
+      } else if (isLast) {
+        flushRow(true);
+      }
+    });
+  }
+
+  // Bei Fenstergrößenänderung neu berechnen (z.B. Drehung am Handy,
+  // Fenster verkleinern). Per Timeout entprellt, damit nicht bei jedem
+  // Pixel während des Ziehens neu gerechnet wird.
+  let resizeTimer = null;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(layoutJustifiedGrid, 150);
+  });
 
   function buildImageTile(image, index) {
     const num = String(index + 1).padStart(2, '0');
@@ -183,11 +260,11 @@
     // Das Originalbild (path) wird erst in der Lightbox nachgeladen.
     const previewSrc = image.thumb || image.path;
     // Das Seitenverhältnis (aus portfolio.json, von generate_thumbnails.py
-    // ermittelt) legt die Breite der Kachel fest, bei einheitlicher Höhe —
-    // dadurch reserviert der Browser sofort den richtigen Platz, ohne dass
-    // das Layout springt, sobald das Bild lädt. Fallback: 1:1 (Quadrat).
+    // ermittelt) wird hier nur gespeichert — die tatsächliche Größe der
+    // Kachel berechnet layoutJustifiedGrid(), damit jede Zeile randscharf
+    // die volle Breite ausfüllt statt unregelmäßig zu wirken.
     const ratio = image.ratio || 1;
-    tile.style.aspectRatio = String(ratio);
+    tile.dataset.ratio = String(ratio);
     tile.innerHTML = `
       <button class="image-thumb" data-action="open">
         <img src="${previewSrc}" alt="${escapeHtml(image.name)}" loading="lazy" decoding="async">
@@ -217,6 +294,9 @@
       if (currentId) {
         viewHome.hidden = true;
         viewGallery.hidden = false;
+        // Während eines anderen Tabs hatte das Grid clientWidth = 0,
+        // daher hier neu berechnen, sobald es wieder sichtbar ist.
+        layoutJustifiedGrid();
       } else {
         viewHome.hidden = false;
         viewGallery.hidden = true;
