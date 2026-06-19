@@ -186,6 +186,10 @@
         "ratio": 1.4989
       },
       {
+        "name": "Zitronen",
+        "path": "images/istanbul/zitronen.jpg"
+      },
+      {
         "name": "Weg nach unten",
         "path": "images/istanbul/treppe.jpg",
         "thumb": "thumbs\\images\\istanbul\\treppe.jpg",
@@ -196,6 +200,196 @@
         "path": "images/istanbul/grab.jpg",
         "thumb": "thumbs\\images\\istanbul\\grab.jpg",
         "ratio": 1.5766
+      }
+    ]
+  },
+  {
+    "id": "mappe-3",
+    "name": "Monaco",
+    "images": [
+      {
+        "name": "Monegassen",
+        "path": "images/monaco/soldaten.jpg"
+      },
+      {
+        "name": "Schichtwechsel",
+        "path": "images/monaco/spalier.jpg"
+      },
+      {
+        "name": "Observation",
+        "path": "images/monaco/maedchen.jpg"
+      },
+      {
+        "name": "Geld entspannt",
+        "path": "images/monaco/liegestuhl.jpg"
+      },
+      {
+        "name": "Hier wird gespielt",
+        "path": "images/monaco/stadion.jpg"
+      },
+      {
+        "name": "Monaco",
+        "path": "images/monaco/monaco.jpg"
+      }
+    ]
+  },
+  {
+    "id": "mappe-4",
+    "name": "Praha",
+    "images": [
+      {
+        "name": "Prag",
+        "path": "images/prag/kathedrale.jpg"
+      },
+      {
+        "name": "Moldau",
+        "path": "images/prag/bruecke.jpg"
+      },
+      {
+        "name": "Verkehr",
+        "path": "images/prag/wasser.jpg"
+      },
+      {
+        "name": "Urlaub",
+        "path": "images/prag/boot.jpg"
+      },
+      {
+        "name": "Feuer",
+        "path": "images/prag/revolution.jpg"
+      },
+      {
+        "name": "Viel zu tun",
+        "path": "images/prag/tattoo.jpg"
+      },
+      {
+        "name": "Aperol",
+        "path": "images/prag/aperol.jpg"
+      },
+      {
+        "name": "Kurz vor dem Absprung",
+        "path": "images/prag/absprung.jpg"
+      },
+      {
+        "name": "Gute Nacht Prag",
+        "path": "images/prag/abendrot.jpg"
+      }
+    ]
+  },
+  {
+    "id": "mappe-5",
+    "name": "Côte d'Azur",
+    "images": [
+      {
+        "name": "Menton",
+        "path": "images/azur/stadt.jpg"
+      },
+      {
+        "name": "Schichten",
+        "path": "images/azur/kirche.jpg"
+      },
+      {
+        "name": "Weinberge",
+        "path": "images/azur/berg.jpg"
+      },
+      {
+        "name": "Pause",
+        "path": "images/azur/handy.jpg"
+      },
+      {
+        "name": "Guter Schlaf",
+        "path": "images/azur/schlafen.jpg"
+      },
+      {
+        "name": "Gutes Buch",
+        "path": "images/azur/lesen.jpg"
+      },
+      {
+        "name": "Ausstieg",
+        "path": "images/azur/station.jpg"
+      },
+      {
+        "name": "Kaktusblüte",
+        "path": "images/azur/bluete.jpg"
+      },
+      {
+        "name": "Kaktus",
+        "path": "images/azur/kaktus.jpg"
+      },
+      {
+        "name": "Hibiskus",
+        "path": "images/azur/bluete2.jpg"
+      },
+      {
+        "name": "Auf Wiedersehen",
+        "path": "images/azur/katze.jpg"
+      }
+    ]
+  },
+  {
+    "id": "mappe-6",
+    "name": "Dresden",
+    "images": [
+      {
+        "name": "Kette",
+        "path": "images/dresden/riesenrad.jpg"
+      },
+      {
+        "name": "Goldener Reiter",
+        "path": "images/dresden/gold.jpg"
+      },
+      {
+        "name": "Spiegelung",
+        "path": "images/dresden/spiegelung.jpg"
+      },
+      {
+        "name": "Blau trifft Blau",
+        "path": "images/dresden/blau.jpg"
+      },
+      {
+        "name": "Alles in der Hand",
+        "path": "images/dresden/statue.jpg"
+      },
+      {
+        "name": "Feierabend",
+        "path": "images/dresden/bier.jpg"
+      }
+    ]
+  },
+  {
+    "id": "mappe-7",
+    "name": "Lisboa",
+    "images": [
+      {
+        "name": "Blüte",
+        "path": "images/lissabon/blume.jpg"
+      },
+      {
+        "name": "Blick in den Hof",
+        "path": "images/lissabon/burg.jpg"
+      },
+      {
+        "name": "Erinnerung",
+        "path": "images/lissabon/foto.jpg"
+      },
+      {
+        "name": "Blick zurück",
+        "path": "images/lissabon/taube.jpg"
+      },
+      {
+        "name": "Geheiligt",
+        "path": "images/lissabon/heilig.jpg"
+      },
+      {
+        "name": "Kleiner Prinz",
+        "path": "images/lissabon/kleinerprinz.jpg"
+      },
+      {
+        "name": "Neugier",
+        "path": "images/lissabon/neugier.jpg"
+      },
+      {
+        "name": "Wolkenmeer",
+        "path": "images/lissabon/wolken.jpg"
       }
     ]
   }
