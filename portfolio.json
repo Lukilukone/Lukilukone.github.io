@@ -479,5 +479,107 @@
         "ratio": 1.4989
       }
     ]
+  },
+  {
+    "id": "mappe-8",
+    "name": "Norge",
+    "images": [
+      {
+        "name": "Norwegen",
+        "path": "images/norwegen/schwarzweiss.jpg"
+      },
+      {
+        "name": "Bucht",
+        "path": "images/norwegen/aida.jpg"
+      },
+      {
+        "name": "Kreuzfahrt",
+        "path": "images/norwegen/aidafarbe.jpg"
+      },
+      {
+        "name": "Unterwegs",
+        "path": "images/norwegen/auto.jpg"
+      },
+      {
+        "name": "Nebel",
+        "path": "images/norwegen/nebel.jpg"
+      },
+      {
+        "name": "Schnee",
+        "path": "images/norwegen/schnee.jpg"
+      },
+      {
+        "name": "Blick über den Fjord",
+        "path": "images/norwegen/dorf.jpg"
+      },
+      {
+        "name": "Fjord",
+        "path": "images/norwegen/fjord.jpg"
+      },
+      {
+        "name": "Käfer",
+        "path": "images/norwegen/schnakseln.jpg"
+      },
+      {
+        "name": "Überfahrt",
+        "path": "images/norwegen/faehre.jpg"
+      },
+      {
+        "name": "Kaltes Wasser",
+        "path": "images/norwegen/wellen.jpg"
+      },
+      {
+        "name": "Warten",
+        "path": "images/norwegen/girl.jpg"
+      },
+      {
+        "name": "Bottom",
+        "path": "images/norwegen/hintern.jpg"
+      },
+      {
+        "name": "Zu erzählen",
+        "path": "images/norwegen/bla.jpg"
+      },
+      {
+        "name": "Der Schrei",
+        "path": "images/norwegen/schrei.jpg"
+      },
+      {
+        "name": "Kontrast",
+        "path": "images/norwegen/kontrast.jpg"
+      },
+      {
+        "name": "Flucht",
+        "path": "images/norwegen/run.jpg"
+      },
+      {
+        "name": "Soldat",
+        "path": "images/norwegen/soldat.jpg"
+      },
+      {
+        "name": "Pickelhaube",
+        "path": "images/norwegen/pickelhaube.jpg"
+      },
+      {
+        "name": "Weg nach oben",
+        "path": "images/norwegen/treppe.jpg"
+      },
+      {
+        "name": "Kunst",
+        "path": "images/norwegen/moewe.jpg"
+      },
+      {
+        "name": "Nacht",
+        "path": "images/norwegen/nacht.jpg"
+      },
+      {
+        "name": "Verwischte Nacht",
+        "path": "images/norwegen/lichter.jpg"
+      },
+      {
+        "name": "Abstrakte Nacht",
+        "path": "images/norwegen/abstrakt.jpg"
+      }
+    ]
   }
 ]
