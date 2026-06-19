@@ -486,99 +486,148 @@
     "images": [
       {
         "name": "Norwegen",
-        "path": "images/norwegen/schwarzweiss.jpg"
+        "path": "images/norwegen/schwarzweiss.jpg",
+        "thumb": "thumbs\\images\\norwegen\\schwarzweiss.jpg",
+        "ratio": 1.4989,
+        "cover": "covers\\images\\norwegen\\schwarzweiss.jpg"
       },
       {
         "name": "Bucht",
-        "path": "images/norwegen/aida.jpg"
+        "path": "images/norwegen/aida.jpg",
+        "thumb": "thumbs\\images\\norwegen\\aida.jpg",
+        "ratio": 1.4989
       },
       {
         "name": "Kreuzfahrt",
-        "path": "images/norwegen/aidafarbe.jpg"
+        "path": "images/norwegen/aidafarbe.jpg",
+        "thumb": "thumbs\\images\\norwegen\\aidafarbe.jpg",
+        "ratio": 1.4989
       },
       {
         "name": "Unterwegs",
-        "path": "images/norwegen/auto.jpg"
+        "path": "images/norwegen/auto.jpg",
+        "thumb": "thumbs\\images\\norwegen\\auto.jpg",
+        "ratio": 0.6671
       },
       {
         "name": "Nebel",
-        "path": "images/norwegen/nebel.jpg"
+        "path": "images/norwegen/nebel.jpg",
+        "thumb": "thumbs\\images\\norwegen\\nebel.jpg",
+        "ratio": 1.4989
       },
       {
         "name": "Schnee",
-        "path": "images/norwegen/schnee.jpg"
+        "path": "images/norwegen/schnee.jpg",
+        "thumb": "thumbs\\images\\norwegen\\schnee.jpg",
+        "ratio": 1.4989
       },
       {
         "name": "Blick über den Fjord",
-        "path": "images/norwegen/dorf.jpg"
+        "path": "images/norwegen/dorf.jpg",
+        "thumb": "thumbs\\images\\norwegen\\dorf.jpg",
+        "ratio": 1.4989
       },
       {
         "name": "Fjord",
-        "path": "images/norwegen/fjord.jpg"
+        "path": "images/norwegen/fjord.jpg",
+        "thumb": "thumbs\\images\\norwegen\\fjord.jpg",
+        "ratio": 1.4989
       },
       {
         "name": "Käfer",
-        "path": "images/norwegen/schnakseln.jpg"
+        "path": "images/norwegen/schnakseln.jpg",
+        "thumb": "thumbs\\images\\norwegen\\schnakseln.jpg",
+        "ratio": 1.4989
       },
       {
         "name": "Überfahrt",
-        "path": "images/norwegen/faehre.jpg"
+        "path": "images/norwegen/faehre.jpg",
+        "thumb": "thumbs\\images\\norwegen\\faehre.jpg",
+        "ratio": 1.4989
       },
       {
         "name": "Kaltes Wasser",
-        "path": "images/norwegen/wellen.jpg"
+        "path": "images/norwegen/wellen.jpg",
+        "thumb": "thumbs\\images\\norwegen\\wellen.jpg",
+        "ratio": 1.4989
       },
       {
         "name": "Warten",
-        "path": "images/norwegen/girl.jpg"
+        "path": "images/norwegen/girl.jpg",
+        "thumb": "thumbs\\images\\norwegen\\girl.jpg",
+        "ratio": 1.4989
       },
       {
         "name": "Bottom",
-        "path": "images/norwegen/hintern.jpg"
+        "path": "images/norwegen/hintern.jpg",
+        "thumb": "thumbs\\images\\norwegen\\hintern.jpg",
+        "ratio": 1.4989
       },
       {
         "name": "Zu erzählen",
-        "path": "images/norwegen/bla.jpg"
+        "path": "images/norwegen/bla.jpg",
+        "thumb": "thumbs\\images\\norwegen\\bla.jpg",
+        "ratio": 1.4989
       },
       {
         "name": "Der Schrei",
-        "path": "images/norwegen/schrei.jpg"
+        "path": "images/norwegen/schrei.jpg",
+        "thumb": "thumbs\\images\\norwegen\\schrei.jpg",
+        "ratio": 1.4989
       },
       {
         "name": "Kontrast",
-        "path": "images/norwegen/kontrast.jpg"
+        "path": "images/norwegen/kontrast.jpg",
+        "thumb": "thumbs\\images\\norwegen\\kontrast.jpg",
+        "ratio": 1.4989
       },
       {
         "name": "Flucht",
-        "path": "images/norwegen/run.jpg"
+        "path": "images/norwegen/run.jpg",
+        "thumb": "thumbs\\images\\norwegen\\run.jpg",
+        "ratio": 1.4989
       },
       {
         "name": "Soldat",
-        "path": "images/norwegen/soldat.jpg"
+        "path": "images/norwegen/soldat.jpg",
+        "thumb": "thumbs\\images\\norwegen\\soldat.jpg",
+        "ratio": 1.4989
       },
       {
         "name": "Pickelhaube",
-        "path": "images/norwegen/pickelhaube.jpg"
+        "path": "images/norwegen/pickelhaube.jpg",
+        "thumb": "thumbs\\images\\norwegen\\pickelhaube.jpg",
+        "ratio": 1.4989
       },
       {
         "name": "Weg nach oben",
-        "path": "images/norwegen/treppe.jpg"
+        "path": "images/norwegen/treppe.jpg",
+        "thumb": "thumbs\\images\\norwegen\\treppe.jpg",
+        "ratio": 1.4989
       },
       {
         "name": "Kunst",
-        "path": "images/norwegen/moewe.jpg"
+        "path": "images/norwegen/moewe.jpg",
+        "thumb": "thumbs\\images\\norwegen\\moewe.jpg",
+        "ratio": 1.4989
       },
       {
         "name": "Nacht",
-        "path": "images/norwegen/nacht.jpg"
+        "path": "images/norwegen/nacht.jpg",
+        "thumb": "thumbs\\images\\norwegen\\nacht.jpg",
+        "ratio": 1.4989
       },
       {
         "name": "Verwischte Nacht",
-        "path": "images/norwegen/lichter.jpg"
+        "path": "images/norwegen/lichter.jpg",
+        "thumb": "thumbs\\images\\norwegen\\lichter.jpg",
+        "ratio": 1.4989
       },
       {
         "name": "Abstrakte Nacht",
-        "path": "images/norwegen/abstrakt.jpg"
+        "path": "images/norwegen/abstrakt.jpg",
+        "thumb": "thumbs\\images\\norwegen\\abstrakt.jpg",
+        "ratio": 1.4989
       }
     ]
   }
