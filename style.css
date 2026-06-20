@@ -131,12 +131,12 @@ img { display: block; max-width: 100%; }
 .lock-btn:hover { color: var(--text); }
 .lock-btn.unlocked { color: var(--accent); border-color: var(--accent); }
 
-/* ---------- Site navigation (Hamburger-Menü) ---------- */
+/* ---------- Site navigation (Hamburger-Menü als Randleiste) ---------- */
 .site-nav {
   position: fixed;
   top: 1.25rem;
   right: 1.25rem;
-  z-index: 50;
+  z-index: 70;
 }
 @media (min-width: 640px) {
   .site-nav { top: 1.75rem; right: 2rem; }
@@ -155,28 +155,60 @@ img { display: block; max-width: 100%; }
 .nav-toggle:hover { border-color: var(--text-muted); }
 .nav-toggle.open { border-color: var(--accent); color: var(--accent); }
 
-.nav-menu {
-  position: absolute;
-  top: calc(100% + 0.5rem);
+/* Abgedunkelter Hintergrund hinter der ausgeklappten Leiste — schließt
+   das Menü bei Klick daneben. */
+.nav-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 55;
+  background: rgba(15,13,12,0.55);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.nav-overlay[hidden] { display: none; }
+.nav-overlay.nav-overlay-visible {
+  opacity: 1;
+}
+
+/* Die eigentliche Randleiste: liegt fix am rechten Rand und schiebt
+   per transform herein/heraus, statt als Popup unterhalb des Buttons
+   zu erscheinen. */
+.nav-drawer {
+  position: fixed;
+  top: 0;
   right: 0;
-  min-width: 160px;
+  bottom: 0;
+  z-index: 60;
+  width: min(78vw, 320px);
   background: var(--surface);
-  border: 1px solid var(--border);
+  border-left: 1px solid var(--border);
+  transform: translateX(100%);
+  transition: transform 0.32s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.nav-drawer[hidden] {
+  /* Bleibt während der Schließanimation im DOM sichtbar (siehe app.js),
+     "hidden" wird erst nach Animationsende per JS gesetzt; diese Regel
+     greift daher nur, wenn das Menü direkt ohne Animation startet. */
+  display: block;
+  transform: translateX(100%);
+}
+.nav-drawer.nav-drawer-open {
+  transform: translateX(0);
+}
+.nav-drawer-inner {
   display: flex;
   flex-direction: column;
-  overflow: hidden;
+  padding-top: 5.5rem;
 }
-.nav-menu[hidden] { display: none; }
 .nav-item {
-  padding: 0.85rem 1.1rem;
+  padding: 1.1rem 1.5rem;
   text-align: left;
   font-family: var(--mono);
-  font-size: 0.85rem;
+  font-size: 0.95rem;
   color: var(--text-muted);
   border-bottom: 1px solid var(--border);
   transition: background 0.15s, color 0.15s;
 }
-.nav-item:last-child { border-bottom: none; }
 .nav-item:hover { background: var(--accent-soft); color: var(--text); }
 .nav-item.active { color: var(--accent); }
 
@@ -540,6 +572,18 @@ img { display: block; max-width: 100%; }
 .lightbox[hidden] { display: none; }
 @media (min-width: 640px) { .lightbox { padding: 2.5rem; } }
 
+.lb-stage {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Reserviert von Anfang an Platz, auch bevor das erste Bild geladen
+     ist (das Bild selbst hat dann noch keine Eigengröße) — verhindert,
+     dass die Stage kollabiert und der Spinner "aus dem Nichts" erscheint. */
+  min-height: 40vh;
+  min-width: 10vw;
+}
+
 .lb-image {
   max-height: 80vh;
   max-width: 100%;
@@ -552,13 +596,19 @@ img { display: block; max-width: 100%; }
   opacity: 0;
 }
 .lb-spinner {
+  /* Liegt über dem Bild statt im normalen Dokumentenfluss darunter —
+     dadurch beansprucht der Spinner keinen eigenen Platz und die
+     Lightbox "springt" beim Erscheinen des Spinners nicht mehr nach
+     oben. Einzig die Bildgröße bestimmt die Höhe der Stage. */
+  position: absolute;
+  inset: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--text-muted);
-  padding: 3rem;
   opacity: 0;
   transition: opacity 0.2s ease 0.15s;
+  pointer-events: none;
 }
 .lb-spinner.lb-spinner-visible {
   opacity: 1;

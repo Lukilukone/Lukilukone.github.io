@@ -1,5 +1,29 @@
 # Änderungen
 
+## Update 5: Lightbox-Sprung wirklich behoben, Menü als Randleiste
+
+**1. Lightbox-Sprung nach oben behoben**
+
+Der vorherige Fix hatte ein neues Problem verursacht: Der Lade-Spinner
+stand im normalen Dokumentenfluss unterhalb des (unsichtbaren) Bildes,
+wodurch er beim Erscheinen zusätzlichen Platz beanspruchte und die ganze
+Lightbox (die zentriert ist) nach oben schob.
+
+Jetzt liegen Bild und Spinner in einem gemeinsamen Wrapper übereinander
+(der Spinner ist absolut über dem Bild positioniert, nicht mehr
+darunter im Fluss). Dadurch beansprucht ausschließlich das Bild selbst
+Platz, der Spinner erscheint exakt an der gleichen Stelle, ohne dass
+sich irgendetwas verschiebt — weder nach oben noch nach unten.
+
+**2. Menü jetzt als Randleiste (Off-Canvas-Drawer) statt Popup**
+
+Das Menü klappt jetzt von rechts als echte Seitenleiste über die volle
+Bildschirmhöhe herein, mit halbtransparentem Hintergrund-Overlay
+dahinter (Klick darauf schließt das Menü). Die Einträge sind dadurch
+auch größer und besser antippbar, gerade auf dem Handy.
+
+---
+
 ## Update 4: Lightbox-Sprung behoben, Grid komplett überarbeitet (Justified Gallery)
 
 **1. Bild-Sprung beim Wechseln in der Lightbox behoben**

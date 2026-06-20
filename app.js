@@ -313,8 +313,22 @@
     closeNavMenu();
   }
 
+  const navOverlay = $('nav-overlay');
+  const NAV_TRANSITION_MS = 320; // muss zur CSS-transition-duration von .nav-drawer passen
+  let navCloseTimer = null;
+
   function openNavMenu() {
+    clearTimeout(navCloseTimer);
     navMenu.hidden = false;
+    navOverlay.hidden = false;
+    navMenu.setAttribute('aria-hidden', 'false');
+    // Eine Frame warten, bevor die "open"-Klasse gesetzt wird, damit der
+    // Browser den Startzustand (off-screen) erst rendert — sonst springt
+    // die Leiste ohne Animation direkt herein.
+    requestAnimationFrame(() => {
+      navMenu.classList.add('nav-drawer-open');
+      navOverlay.classList.add('nav-overlay-visible');
+    });
     navToggle.classList.add('open');
     navToggle.setAttribute('aria-expanded', 'true');
     navIconOpen.hidden = true;
@@ -322,11 +336,21 @@
   }
 
   function closeNavMenu() {
-    navMenu.hidden = true;
+    if (navMenu.hidden) return; // bereits zu, nichts zu tun
+    clearTimeout(navCloseTimer);
+    navMenu.classList.remove('nav-drawer-open');
+    navOverlay.classList.remove('nav-overlay-visible');
+    navMenu.setAttribute('aria-hidden', 'true');
     navToggle.classList.remove('open');
     navToggle.setAttribute('aria-expanded', 'false');
     navIconOpen.hidden = false;
     navIconClose.hidden = true;
+    // hidden erst nach Abschluss der Ausschwung-Animation setzen, sonst
+    // verschwindet die Leiste abrupt statt herauszugleiten.
+    navCloseTimer = setTimeout(() => {
+      navMenu.hidden = true;
+      navOverlay.hidden = true;
+    }, NAV_TRANSITION_MS);
   }
 
   function toggleNavMenu() {
@@ -444,9 +468,7 @@
   document.querySelectorAll('.nav-item').forEach((el) => {
     el.addEventListener('click', () => showTab(el.dataset.tab));
   });
-  document.addEventListener('click', (e) => {
-    if (!navMenu.hidden && !e.target.closest('.site-nav')) closeNavMenu();
-  });
+  navOverlay.addEventListener('click', closeNavMenu);
 
   $('btn-impressum').addEventListener('click', openImpressum);
   $('impressum-close').addEventListener('click', closeImpressum);
