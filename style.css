@@ -154,6 +154,13 @@ img { display: block; max-width: 100%; }
 }
 .nav-toggle:hover { border-color: var(--text-muted); }
 .nav-toggle.open { border-color: var(--accent); color: var(--accent); }
+/* Erzwingt das Verstecken zuverlässig, auch falls eine andere Regel mit
+   gleicher oder höherer Spezifität sonst mit dem hidden-Attribut der
+   beiden Icons kollidieren würde (sonst könnten kurzzeitig beide
+   gleichzeitig sichtbar wirken). */
+.nav-toggle svg[hidden] {
+  display: none !important;
+}
 
 /* Abgedunkelter Hintergrund hinter der ausgeklappten Leiste — schließt
    das Menü bei Klick daneben. */

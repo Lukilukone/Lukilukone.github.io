@@ -34,6 +34,7 @@
 
   const navToggle = $('nav-toggle');
   const navMenu = $('nav-menu');
+  const siteNav = document.querySelector('.site-nav');
   const navIconOpen = document.querySelector('.nav-icon-open');
   const navIconClose = document.querySelector('.nav-icon-close');
   const viewInfo = $('view-info');
@@ -317,6 +318,16 @@
   const NAV_TRANSITION_MS = 320; // muss zur CSS-transition-duration von .nav-drawer passen
   let navCloseTimer = null;
 
+  function setNavIconState(isOpen) {
+    // Eine einzige Klasse auf dem Button entscheidet per CSS, welches der
+    // beiden Icons sichtbar ist — das schließt aus, dass durch verteilte
+    // hidden-Zuweisungen an zwei Stellen jemals beide gleichzeitig (oder
+    // keines) sichtbar sind.
+    navToggle.classList.toggle('open', isOpen);
+    navIconOpen.hidden = isOpen;
+    navIconClose.hidden = !isOpen;
+  }
+
   function openNavMenu() {
     clearTimeout(navCloseTimer);
     navMenu.hidden = false;
@@ -329,10 +340,8 @@
       navMenu.classList.add('nav-drawer-open');
       navOverlay.classList.add('nav-overlay-visible');
     });
-    navToggle.classList.add('open');
     navToggle.setAttribute('aria-expanded', 'true');
-    navIconOpen.hidden = true;
-    navIconClose.hidden = false;
+    setNavIconState(true);
   }
 
   function closeNavMenu() {
@@ -341,10 +350,8 @@
     navMenu.classList.remove('nav-drawer-open');
     navOverlay.classList.remove('nav-overlay-visible');
     navMenu.setAttribute('aria-hidden', 'true');
-    navToggle.classList.remove('open');
     navToggle.setAttribute('aria-expanded', 'false');
-    navIconOpen.hidden = false;
-    navIconClose.hidden = true;
+    setNavIconState(false);
     // hidden erst nach Abschluss der Ausschwung-Animation setzen, sonst
     // verschwindet die Leiste abrupt statt herauszugleiten.
     navCloseTimer = setTimeout(() => {
@@ -372,12 +379,16 @@
   function openLightbox(index) {
     lightboxIndex = index;
     lightbox.hidden = false;
+    // Menü-Button ausblenden, solange die Lightbox offen ist — sonst
+    // überlagert er das Schließen-Icon der Lightbox und blockiert es.
+    siteNav.hidden = true;
     renderLightbox();
   }
 
   function closeLightbox() {
     lightboxIndex = null;
     lightbox.hidden = true;
+    siteNav.hidden = false;
     lbImage.classList.add('lb-image-hidden');
     lbCaption.classList.add('lb-caption-hidden');
     lbImage.src = '';
@@ -477,6 +488,7 @@
   });
 
   // Start der Anwendung
+  setNavIconState(false); // sicherstellen, dass exakt das Hamburger-Icon startet
   showTab('gallery');
   initApp();
 })();

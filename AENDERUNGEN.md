@@ -1,5 +1,45 @@
 # Änderungen
 
+## Update 6: Menü-Button-Überlappung behoben, Hamburger-Icon-Fix, automatische Bilderkennung
+
+**1. Menü-Button überdeckt nicht mehr das Lightbox-Schließen-Icon**
+
+Der Menü-Button wird jetzt automatisch ausgeblendet, sobald eine Lightbox
+geöffnet ist, und erscheint erst wieder, wenn sie geschlossen wird. Das
+Schließen-Icon (X) der Lightbox ist dadurch immer frei erreichbar.
+
+**2. Hamburger-/X-Icon zeigt jetzt zuverlässig nur eines von beiden**
+
+Die Sichtbarkeit beider Icons wird jetzt über eine einzige, zentrale
+Funktion gesteuert (statt über vier verteilte Einzelzuweisungen), und
+eine zusätzliche CSS-Regel verhindert zuverlässig, dass durch eine
+Kaskaden-Kollision je beide Icons gleichzeitig sichtbar sein können.
+
+**3. `generate_thumbnails.py`: automatische Erkennung neuer Mappen/Bilder**
+
+Das Skript durchsucht jetzt selbstständig den Ordner `projekte/` (siehe
+`IMAGES_BASE_DIR` am Skriptanfang, falls du einen anderen Ordnernamen
+nutzt) und ergänzt `portfolio.json` automatisch:
+
+- **Neue Unterordner** in `projekte/` werden automatisch als neue Mappe
+  erkannt. Der Ordnername wird zur internen ID, der angezeigte Name wird
+  beim ersten Erkennen automatisch abgeleitet (z.B. `street-photography`
+  → "Street Photography").
+- **Neue Bilddateien** (`.jpg`, `.jpeg`, `.png`, `.webp`) in einem
+  Mappen-Ordner werden automatisch erkannt und alphabetisch einsortiert.
+- **Bereits vorhandene Einträge bleiben unverändert** — falls du einen
+  Mappen- oder Bildnamen von Hand in `portfolio.json` angepasst hast,
+  wird das beim nächsten Lauf nicht überschrieben.
+- Das Skript **löscht nie** automatisch Einträge. Wenn du ein Bild
+  endgültig entfernen willst, lösche den entsprechenden Eintrag manuell
+  aus `portfolio.json`.
+
+**Damit reicht es jetzt:** Bilder einfach in einen (neuen oder
+bestehenden) Unterordner von `projekte/` legen und das Skript ausführen
+— ganz ohne die JSON von Hand zu bearbeiten.
+
+---
+
 ## Update 5: Lightbox-Sprung wirklich behoben, Menü als Randleiste
 
 **1. Lightbox-Sprung nach oben behoben**
