@@ -636,50 +636,50 @@
     "name": "Auckland",
     "images": [
       {
-        "name": "1vulkan",
+        "name": "Gute Aussichten",
         "path": "images/auckland/1vulkan.jpg",
         "thumb": "thumbs\\images\\auckland\\1vulkan.jpg",
         "ratio": 2.5926,
         "cover": "covers\\images\\auckland\\1vulkan.jpg"
       },
       {
-        "name": "Bay2",
+        "name": "Blick auf den Bay",
         "path": "images/auckland/bay2.jpg",
         "thumb": "thumbs\\images\\auckland\\bay2.jpg",
         "ratio": 1.4989
       },
       {
-        "name": "Boot",
+        "name": "Fischerei",
         "path": "images/auckland/boot.jpg",
         "thumb": "thumbs\\images\\auckland\\boot.jpg",
         "ratio": 1.4989
       },
       {
-        "name": "Bsegelboote",
+        "name": "Segelboote",
         "path": "images/auckland/bsegelboote.jpg",
         "thumb": "thumbs\\images\\auckland\\bsegelboote.jpg",
         "ratio": 2.1277
       },
       {
-        "name": "Bsjacht",
+        "name": "Urlaub",
         "path": "images/auckland/bsjacht.jpg",
         "thumb": "thumbs\\images\\auckland\\bsjacht.jpg",
         "ratio": 1.4989
       },
       {
-        "name": "Gebaeude",
+        "name": "Gebäude",
         "path": "images/auckland/gebaeude.jpg",
         "thumb": "thumbs\\images\\auckland\\gebaeude.jpg",
         "ratio": 1.4989
       },
       {
-        "name": "Inder",
+        "name": "Begeisterung",
         "path": "images/auckland/inder.jpg",
         "thumb": "thumbs\\images\\auckland\\inder.jpg",
         "ratio": 1.4989
       },
       {
-        "name": "Japaner2",
+        "name": "Freude",
         "path": "images/auckland/japaner2.jpg",
         "thumb": "thumbs\\images\\auckland\\japaner2.jpg",
         "ratio": 1.4989
@@ -697,94 +697,15 @@
         "ratio": 1.4989
       },
       {
-        "name": "Vogelkaka",
+        "name": "Ehre",
         "path": "images/auckland/vogelkaka.jpg",
         "thumb": "thumbs\\images\\auckland\\vogelkaka.jpg",
         "ratio": 1.4989
       },
       {
-        "name": "Zflughafen",
+        "name": "Letzter Blick",
         "path": "images/auckland/zflughafen.jpg",
         "thumb": "thumbs\\images\\auckland\\zflughafen.jpg",
-        "ratio": 1.4989
-      }
-    ]
-  },
-  {
-    "id": "azur",
-    "name": "Azur",
-    "images": [
-      {
-        "name": "Berg",
-        "path": "images/azur/berg.jpg",
-        "thumb": "thumbs\\images\\azur\\berg.jpg",
-        "ratio": 1.4989,
-        "cover": "covers\\images\\azur\\berg.jpg"
-      },
-      {
-        "name": "Bluete",
-        "path": "images/azur/bluete.jpg",
-        "thumb": "thumbs\\images\\azur\\bluete.jpg",
-        "ratio": 1.4989
-      },
-      {
-        "name": "Bluete2",
-        "path": "images/azur/bluete2.jpg",
-        "thumb": "thumbs\\images\\azur\\bluete2.jpg",
-        "ratio": 1.4989
-      },
-      {
-        "name": "Frau",
-        "path": "images/azur/frau.jpg",
-        "thumb": "thumbs\\images\\azur\\frau.jpg",
-        "ratio": 1.4989
-      },
-      {
-        "name": "Handy",
-        "path": "images/azur/handy.jpg",
-        "thumb": "thumbs\\images\\azur\\handy.jpg",
-        "ratio": 1.4989
-      },
-      {
-        "name": "Kaktus",
-        "path": "images/azur/kaktus.jpg",
-        "thumb": "thumbs\\images\\azur\\kaktus.jpg",
-        "ratio": 1.4989
-      },
-      {
-        "name": "Katze",
-        "path": "images/azur/katze.jpg",
-        "thumb": "thumbs\\images\\azur\\katze.jpg",
-        "ratio": 1.4989
-      },
-      {
-        "name": "Kirche",
-        "path": "images/azur/kirche.jpg",
-        "thumb": "thumbs\\images\\azur\\kirche.jpg",
-        "ratio": 1.4989
-      },
-      {
-        "name": "Lesen",
-        "path": "images/azur/lesen.jpg",
-        "thumb": "thumbs\\images\\azur\\lesen.jpg",
-        "ratio": 1.4989
-      },
-      {
-        "name": "Schlafen",
-        "path": "images/azur/schlafen.jpg",
-        "thumb": "thumbs\\images\\azur\\schlafen.jpg",
-        "ratio": 1.4989
-      },
-      {
-        "name": "Stadt",
-        "path": "images/azur/stadt.jpg",
-        "thumb": "thumbs\\images\\azur\\stadt.jpg",
-        "ratio": 1.4989
-      },
-      {
-        "name": "Station",
-        "path": "images/azur/station.jpg",
-        "thumb": "thumbs\\images\\azur\\station.jpg",
         "ratio": 1.4989
       }
     ]
@@ -794,14 +715,14 @@
     "name": "Bangkok",
     "images": [
       {
-        "name": "1taube",
+        "name": "Stadtbewohner",
         "path": "images/bangkok/1taube.jpg",
         "thumb": "thumbs\\images\\bangkok\\1taube.jpg",
         "ratio": 1.6627,
         "cover": "covers\\images\\bangkok\\1taube.jpg"
       },
       {
-        "name": "2tempel",
+        "name": "Chao Phraya",
         "path": "images/bangkok/2tempel.jpg",
         "thumb": "thumbs\\images\\bangkok\\2tempel.jpg",
         "ratio": 1.6432
@@ -813,49 +734,49 @@
         "ratio": 1.3514
       },
       {
-        "name": "Dach",
+        "name": "Drei Spitzen",
         "path": "images/bangkok/dach.jpg",
         "thumb": "thumbs\\images\\bangkok\\dach.jpg",
         "ratio": 1.1686
       },
       {
-        "name": "Gondolieri",
+        "name": "Gondoliere",
         "path": "images/bangkok/gondolieri.jpg",
         "thumb": "thumbs\\images\\bangkok\\gondolieri.jpg",
         "ratio": 1.4989
       },
       {
-        "name": "Handy",
+        "name": "Lesestoff",
         "path": "images/bangkok/handy.jpg",
         "thumb": "thumbs\\images\\bangkok\\handy.jpg",
         "ratio": 2.2082
       },
       {
-        "name": "Katze",
+        "name": "Katze hinter Gittern",
         "path": "images/bangkok/katze.jpg",
         "thumb": "thumbs\\images\\bangkok\\katze.jpg",
         "ratio": 1.6509
       },
       {
-        "name": "Katze2",
+        "name": "Wohlverdienter Schlaf",
         "path": "images/bangkok/katze2.jpg",
         "thumb": "thumbs\\images\\bangkok\\katze2.jpg",
         "ratio": 1.5982
       },
       {
-        "name": "Melonen",
+        "name": "Mann der Stunde",
         "path": "images/bangkok/melonen.jpg",
         "thumb": "thumbs\\images\\bangkok\\melonen.jpg",
         "ratio": 1.9284
       },
       {
-        "name": "Opa",
+        "name": "Arbeitsweg",
         "path": "images/bangkok/opa.jpg",
         "thumb": "thumbs\\images\\bangkok\\opa.jpg",
         "ratio": 1.9499
       },
       {
-        "name": "Soldat",
+        "name": "Mittagspause",
         "path": "images/bangkok/soldat.jpg",
         "thumb": "thumbs\\images\\bangkok\\soldat.jpg",
         "ratio": 1.6627
@@ -863,570 +784,11 @@
     ]
   },
   {
-    "id": "dresden",
-    "name": "Dresden",
-    "images": [
-      {
-        "name": "Bier",
-        "path": "images/dresden/bier.jpg",
-        "thumb": "thumbs\\images\\dresden\\bier.jpg",
-        "ratio": 1.4989,
-        "cover": "covers\\images\\dresden\\bier.jpg"
-      },
-      {
-        "name": "Blau",
-        "path": "images/dresden/blau.jpg",
-        "thumb": "thumbs\\images\\dresden\\blau.jpg",
-        "ratio": 1.4989
-      },
-      {
-        "name": "Gold",
-        "path": "images/dresden/gold.jpg",
-        "thumb": "thumbs\\images\\dresden\\gold.jpg",
-        "ratio": 1.4989
-      },
-      {
-        "name": "Riesenrad",
-        "path": "images/dresden/riesenrad.jpg",
-        "thumb": "thumbs\\images\\dresden\\riesenrad.jpg",
-        "ratio": 1.4989
-      },
-      {
-        "name": "Spiegelung",
-        "path": "images/dresden/spiegelung.jpg",
-        "thumb": "thumbs\\images\\dresden\\spiegelung.jpg",
-        "ratio": 1.4989
-      },
-      {
-        "name": "Statue",
-        "path": "images/dresden/statue.jpg",
-        "thumb": "thumbs\\images\\dresden\\statue.jpg",
-        "ratio": 1.4989
-      }
-    ]
-  },
-  {
-    "id": "istanbul",
-    "name": "Istanbul",
-    "images": [
-      {
-        "name": "Blick",
-        "path": "images/istanbul/blick.jpg",
-        "thumb": "thumbs\\images\\istanbul\\blick.jpg",
-        "ratio": 1.5021,
-        "cover": "covers\\images\\istanbul\\blick.jpg"
-      },
-      {
-        "name": "Grab",
-        "path": "images/istanbul/grab.jpg",
-        "thumb": "thumbs\\images\\istanbul\\grab.jpg",
-        "ratio": 1.5766
-      },
-      {
-        "name": "Kaffee",
-        "path": "images/istanbul/kaffee.jpg",
-        "thumb": "thumbs\\images\\istanbul\\kaffee.jpg",
-        "ratio": 1.4989
-      },
-      {
-        "name": "Portrait",
-        "path": "images/istanbul/portrait.jpg",
-        "thumb": "thumbs\\images\\istanbul\\portrait.jpg",
-        "ratio": 2.0
-      },
-      {
-        "name": "Schwarzmeer",
-        "path": "images/istanbul/schwarzmeer.jpg",
-        "thumb": "thumbs\\images\\istanbul\\schwarzmeer.jpg",
-        "ratio": 2.7344
-      },
-      {
-        "name": "Taube",
-        "path": "images/istanbul/taube.jpg",
-        "thumb": "thumbs\\images\\istanbul\\taube.jpg",
-        "ratio": 1.4989
-      },
-      {
-        "name": "Teppich",
-        "path": "images/istanbul/teppich.jpg",
-        "thumb": "thumbs\\images\\istanbul\\teppich.jpg",
-        "ratio": 1.4989
-      },
-      {
-        "name": "Treppe",
-        "path": "images/istanbul/treppe.jpg",
-        "thumb": "thumbs\\images\\istanbul\\treppe.jpg",
-        "ratio": 1.4989
-      },
-      {
-        "name": "Zitronen",
-        "path": "images/istanbul/zitronen.jpg",
-        "thumb": "thumbs\\images\\istanbul\\zitronen.jpg",
-        "ratio": 1.4644
-      },
-      {
-        "name": "Zwinker",
-        "path": "images/istanbul/zwinker.jpg",
-        "thumb": "thumbs\\images\\istanbul\\zwinker.jpg",
-        "ratio": 1.4989
-      }
-    ]
-  },
-  {
-    "id": "lissabon",
-    "name": "Lissabon",
-    "images": [
-      {
-        "name": "Blume",
-        "path": "images/lissabon/blume.jpg",
-        "thumb": "thumbs\\images\\lissabon\\blume.jpg",
-        "ratio": 1.4989,
-        "cover": "covers\\images\\lissabon\\blume.jpg"
-      },
-      {
-        "name": "Burg",
-        "path": "images/lissabon/burg.jpg",
-        "thumb": "thumbs\\images\\lissabon\\burg.jpg",
-        "ratio": 1.4989
-      },
-      {
-        "name": "Foto",
-        "path": "images/lissabon/foto.jpg",
-        "thumb": "thumbs\\images\\lissabon\\foto.jpg",
-        "ratio": 1.4989
-      },
-      {
-        "name": "Heilig",
-        "path": "images/lissabon/heilig.jpg",
-        "thumb": "thumbs\\images\\lissabon\\heilig.jpg",
-        "ratio": 1.4989
-      },
-      {
-        "name": "Kleinerprinz",
-        "path": "images/lissabon/kleinerprinz.jpg",
-        "thumb": "thumbs\\images\\lissabon\\kleinerprinz.jpg",
-        "ratio": 1.4989
-      },
-      {
-        "name": "Neugier",
-        "path": "images/lissabon/neugier.jpg",
-        "thumb": "thumbs\\images\\lissabon\\neugier.jpg",
-        "ratio": 1.4989
-      },
-      {
-        "name": "Taube",
-        "path": "images/lissabon/taube.jpg",
-        "thumb": "thumbs\\images\\lissabon\\taube.jpg",
-        "ratio": 1.4989
-      },
-      {
-        "name": "Wolken",
-        "path": "images/lissabon/wolken.jpg",
-        "thumb": "thumbs\\images\\lissabon\\wolken.jpg",
-        "ratio": 1.4989
-      }
-    ]
-  },
-  {
-    "id": "monaco",
-    "name": "Monaco",
-    "images": [
-      {
-        "name": "Liegestuhl",
-        "path": "images/monaco/liegestuhl.jpg",
-        "thumb": "thumbs\\images\\monaco\\liegestuhl.jpg",
-        "ratio": 1.4989,
-        "cover": "covers\\images\\monaco\\liegestuhl.jpg"
-      },
-      {
-        "name": "Maedchen",
-        "path": "images/monaco/maedchen.jpg",
-        "thumb": "thumbs\\images\\monaco\\maedchen.jpg",
-        "ratio": 1.4989
-      },
-      {
-        "name": "Monaco",
-        "path": "images/monaco/monaco.jpg",
-        "thumb": "thumbs\\images\\monaco\\monaco.jpg",
-        "ratio": 1.4989
-      },
-      {
-        "name": "Soldaten",
-        "path": "images/monaco/soldaten.jpg",
-        "thumb": "thumbs\\images\\monaco\\soldaten.jpg",
-        "ratio": 1.4989
-      },
-      {
-        "name": "Spalier",
-        "path": "images/monaco/spalier.jpg",
-        "thumb": "thumbs\\images\\monaco\\spalier.jpg",
-        "ratio": 1.4989
-      },
-      {
-        "name": "Stadion",
-        "path": "images/monaco/stadion.jpg",
-        "thumb": "thumbs\\images\\monaco\\stadion.jpg",
-        "ratio": 1.4989
-      }
-    ]
-  },
-  {
-    "id": "norwegen",
-    "name": "Norwegen",
-    "images": [
-      {
-        "name": "Abstrakt",
-        "path": "images/norwegen/abstrakt.jpg",
-        "thumb": "thumbs\\images\\norwegen\\abstrakt.jpg",
-        "ratio": 1.4989,
-        "cover": "covers\\images\\norwegen\\abstrakt.jpg"
-      },
-      {
-        "name": "Aida",
-        "path": "images/norwegen/aida.jpg",
-        "thumb": "thumbs\\images\\norwegen\\aida.jpg",
-        "ratio": 1.4989
-      },
-      {
-        "name": "Aidafarbe",
-        "path": "images/norwegen/aidafarbe.jpg",
-        "thumb": "thumbs\\images\\norwegen\\aidafarbe.jpg",
-        "ratio": 1.4989
-      },
-      {
-        "name": "Auto",
-        "path": "images/norwegen/auto.jpg",
-        "thumb": "thumbs\\images\\norwegen\\auto.jpg",
-        "ratio": 0.6671
-      },
-      {
-        "name": "Bla",
-        "path": "images/norwegen/bla.jpg",
-        "thumb": "thumbs\\images\\norwegen\\bla.jpg",
-        "ratio": 1.4989
-      },
-      {
-        "name": "Dorf",
-        "path": "images/norwegen/dorf.jpg",
-        "thumb": "thumbs\\images\\norwegen\\dorf.jpg",
-        "ratio": 1.4989
-      },
-      {
-        "name": "Faehre",
-        "path": "images/norwegen/faehre.jpg",
-        "thumb": "thumbs\\images\\norwegen\\faehre.jpg",
-        "ratio": 1.4989
-      },
-      {
-        "name": "Fjord",
-        "path": "images/norwegen/fjord.jpg",
-        "thumb": "thumbs\\images\\norwegen\\fjord.jpg",
-        "ratio": 1.4989
-      },
-      {
-        "name": "Girl",
-        "path": "images/norwegen/girl.jpg",
-        "thumb": "thumbs\\images\\norwegen\\girl.jpg",
-        "ratio": 1.4989
-      },
-      {
-        "name": "Hintern",
-        "path": "images/norwegen/hintern.jpg",
-        "thumb": "thumbs\\images\\norwegen\\hintern.jpg",
-        "ratio": 1.4989
-      },
-      {
-        "name": "Kontrast",
-        "path": "images/norwegen/kontrast.jpg",
-        "thumb": "thumbs\\images\\norwegen\\kontrast.jpg",
-        "ratio": 1.4989
-      },
-      {
-        "name": "Lichter",
-        "path": "images/norwegen/lichter.jpg",
-        "thumb": "thumbs\\images\\norwegen\\lichter.jpg",
-        "ratio": 1.4989
-      },
-      {
-        "name": "Moewe",
-        "path": "images/norwegen/moewe.jpg",
-        "thumb": "thumbs\\images\\norwegen\\moewe.jpg",
-        "ratio": 1.4989
-      },
-      {
-        "name": "Nacht",
-        "path": "images/norwegen/nacht.jpg",
-        "thumb": "thumbs\\images\\norwegen\\nacht.jpg",
-        "ratio": 1.4989
-      },
-      {
-        "name": "Nebel",
-        "path": "images/norwegen/nebel.jpg",
-        "thumb": "thumbs\\images\\norwegen\\nebel.jpg",
-        "ratio": 1.4989
-      },
-      {
-        "name": "Pickelhaube",
-        "path": "images/norwegen/pickelhaube.jpg",
-        "thumb": "thumbs\\images\\norwegen\\pickelhaube.jpg",
-        "ratio": 1.4989
-      },
-      {
-        "name": "Run",
-        "path": "images/norwegen/run.jpg",
-        "thumb": "thumbs\\images\\norwegen\\run.jpg",
-        "ratio": 1.4989
-      },
-      {
-        "name": "Schnakseln",
-        "path": "images/norwegen/schnakseln.jpg",
-        "thumb": "thumbs\\images\\norwegen\\schnakseln.jpg",
-        "ratio": 1.4989
-      },
-      {
-        "name": "Schnee",
-        "path": "images/norwegen/schnee.jpg",
-        "thumb": "thumbs\\images\\norwegen\\schnee.jpg",
-        "ratio": 1.4989
-      },
-      {
-        "name": "Schrei",
-        "path": "images/norwegen/schrei.jpg",
-        "thumb": "thumbs\\images\\norwegen\\schrei.jpg",
-        "ratio": 1.4989
-      },
-      {
-        "name": "Schwarzweiss",
-        "path": "images/norwegen/schwarzweiss.jpg",
-        "thumb": "thumbs\\images\\norwegen\\schwarzweiss.jpg",
-        "ratio": 1.4989
-      },
-      {
-        "name": "Soldat",
-        "path": "images/norwegen/soldat.jpg",
-        "thumb": "thumbs\\images\\norwegen\\soldat.jpg",
-        "ratio": 1.4989
-      },
-      {
-        "name": "Treppe",
-        "path": "images/norwegen/treppe.jpg",
-        "thumb": "thumbs\\images\\norwegen\\treppe.jpg",
-        "ratio": 1.4989
-      },
-      {
-        "name": "Wellen",
-        "path": "images/norwegen/wellen.jpg",
-        "thumb": "thumbs\\images\\norwegen\\wellen.jpg",
-        "ratio": 1.4989
-      }
-    ]
-  },
-  {
-    "id": "prag",
-    "name": "Prag",
-    "images": [
-      {
-        "name": "Abendrot",
-        "path": "images/prag/abendrot.jpg",
-        "thumb": "thumbs\\images\\prag\\abendrot.jpg",
-        "ratio": 1.4989,
-        "cover": "covers\\images\\prag\\abendrot.jpg"
-      },
-      {
-        "name": "Absprung",
-        "path": "images/prag/absprung.jpg",
-        "thumb": "thumbs\\images\\prag\\absprung.jpg",
-        "ratio": 1.4989
-      },
-      {
-        "name": "Aperol",
-        "path": "images/prag/aperol.jpg",
-        "thumb": "thumbs\\images\\prag\\aperol.jpg",
-        "ratio": 1.4989
-      },
-      {
-        "name": "Boot",
-        "path": "images/prag/boot.jpg",
-        "thumb": "thumbs\\images\\prag\\boot.jpg",
-        "ratio": 1.4989
-      },
-      {
-        "name": "Bruecke",
-        "path": "images/prag/bruecke.jpg",
-        "thumb": "thumbs\\images\\prag\\bruecke.jpg",
-        "ratio": 1.4989
-      },
-      {
-        "name": "Kathedrale",
-        "path": "images/prag/kathedrale.jpg",
-        "thumb": "thumbs\\images\\prag\\kathedrale.jpg",
-        "ratio": 1.4989
-      },
-      {
-        "name": "Revolution",
-        "path": "images/prag/revolution.jpg",
-        "thumb": "thumbs\\images\\prag\\revolution.jpg",
-        "ratio": 1.4989
-      },
-      {
-        "name": "Tattoo",
-        "path": "images/prag/tattoo.jpg",
-        "thumb": "thumbs\\images\\prag\\tattoo.jpg",
-        "ratio": 1.4989
-      },
-      {
-        "name": "Wasser",
-        "path": "images/prag/wasser.jpg",
-        "thumb": "thumbs\\images\\prag\\wasser.jpg",
-        "ratio": 1.4989
-      }
-    ]
-  },
-  {
-    "id": "project1",
-    "name": "Project1",
-    "images": [
-      {
-        "name": "Aussicht",
-        "path": "images/project1/aussicht.jpg",
-        "thumb": "thumbs\\images\\project1\\aussicht.jpg",
-        "ratio": 1.4989,
-        "cover": "covers\\images\\project1\\aussicht.jpg"
-      },
-      {
-        "name": "Autocafe",
-        "path": "images/project1/autocafe.jpg",
-        "thumb": "thumbs\\images\\project1\\autocafe.jpg",
-        "ratio": 1.4989
-      },
-      {
-        "name": "Blau",
-        "path": "images/project1/blau.jpg",
-        "thumb": "thumbs\\images\\project1\\blau.jpg",
-        "ratio": 1.4989
-      },
-      {
-        "name": "Fahrrad",
-        "path": "images/project1/fahrrad.jpg",
-        "thumb": "thumbs\\images\\project1\\fahrrad.jpg",
-        "ratio": 1.4989
-      },
-      {
-        "name": "Fall",
-        "path": "images/project1/fall.jpg",
-        "thumb": "thumbs\\images\\project1\\fall.jpg",
-        "ratio": 1.4989
-      },
-      {
-        "name": "Flugzeug",
-        "path": "images/project1/flugzeug.jpg",
-        "thumb": "thumbs\\images\\project1\\flugzeug.jpg",
-        "ratio": 1.4989
-      },
-      {
-        "name": "Gondel",
-        "path": "images/project1/gondel.jpg",
-        "thumb": "thumbs\\images\\project1\\gondel.jpg",
-        "ratio": 1.4989
-      },
-      {
-        "name": "Kamel",
-        "path": "images/project1/kamel.jpg",
-        "thumb": "thumbs\\images\\project1\\kamel.jpg",
-        "ratio": 1.4989
-      },
-      {
-        "name": "Karawane",
-        "path": "images/project1/karawane.jpg",
-        "thumb": "thumbs\\images\\project1\\karawane.jpg",
-        "ratio": 1.4989
-      },
-      {
-        "name": "Katze",
-        "path": "images/project1/katze.jpg",
-        "thumb": "thumbs\\images\\project1\\katze.jpg",
-        "ratio": 1.4989
-      },
-      {
-        "name": "Kueste",
-        "path": "images/project1/kueste.jpg",
-        "thumb": "thumbs\\images\\project1\\kueste.jpg",
-        "ratio": 1.4989
-      },
-      {
-        "name": "Leder",
-        "path": "images/project1/leder.jpg",
-        "thumb": "thumbs\\images\\project1\\leder.jpg",
-        "ratio": 1.4989
-      },
-      {
-        "name": "Leitung",
-        "path": "images/project1/leitung.jpg",
-        "thumb": "thumbs\\images\\project1\\leitung.jpg",
-        "ratio": 1.4989
-      },
-      {
-        "name": "Mann",
-        "path": "images/project1/mann.jpg",
-        "thumb": "thumbs\\images\\project1\\mann.jpg",
-        "ratio": 1.4989
-      },
-      {
-        "name": "Marokko",
-        "path": "images/project1/marokko.jpg",
-        "thumb": "thumbs\\images\\project1\\marokko.jpg",
-        "ratio": 1.4989
-      },
-      {
-        "name": "Paar",
-        "path": "images/project1/paar.jpg",
-        "thumb": "thumbs\\images\\project1\\paar.jpg",
-        "ratio": 1.4989
-      },
-      {
-        "name": "Pfuetze",
-        "path": "images/project1/pfuetze.jpg",
-        "thumb": "thumbs\\images\\project1\\pfuetze.jpg",
-        "ratio": 1.4989
-      },
-      {
-        "name": "Roller",
-        "path": "images/project1/roller.jpg",
-        "thumb": "thumbs\\images\\project1\\roller.jpg",
-        "ratio": 1.4989
-      },
-      {
-        "name": "Schwimmen",
-        "path": "images/project1/schwimmen.jpg",
-        "thumb": "thumbs\\images\\project1\\schwimmen.jpg",
-        "ratio": 1.4989
-      },
-      {
-        "name": "Sonnenuntergang",
-        "path": "images/project1/sonnenuntergang.jpg",
-        "thumb": "thumbs\\images\\project1\\sonnenuntergang.jpg",
-        "ratio": 1.4989
-      },
-      {
-        "name": "Strand",
-        "path": "images/project1/strand.jpg",
-        "thumb": "thumbs\\images\\project1\\strand.jpg",
-        "ratio": 1.4989
-      },
-      {
-        "name": "Surf",
-        "path": "images/project1/surf.jpg",
-        "thumb": "thumbs\\images\\project1\\surf.jpg",
-        "ratio": 1.4989
-      }
-    ]
-  },
-  {
     "id": "schanghai",
-    "name": "Schanghai",
+    "name": "Shànghǎi",
     "images": [
       {
-        "name": "1manntreppe",
+        "name": "Von oben herab",
         "path": "images/schanghai/1manntreppe.jpg",
         "thumb": "thumbs\\images\\schanghai\\1manntreppe.jpg",
         "ratio": 1.306,
@@ -1445,37 +807,37 @@
         "ratio": 1.4989
       },
       {
-        "name": "Fluss",
+        "name": "Transport",
         "path": "images/schanghai/fluss.jpg",
         "thumb": "thumbs\\images\\schanghai\\fluss.jpg",
         "ratio": 1.4989
       },
       {
-        "name": "Fskyline",
+        "name": "Über der Stadt",
         "path": "images/schanghai/fskyline.jpg",
         "thumb": "thumbs\\images\\schanghai\\fskyline.jpg",
         "ratio": 1.4989
       },
       {
-        "name": "Fstadt",
+        "name": "Betonwüste",
         "path": "images/schanghai/fstadt.jpg",
         "thumb": "thumbs\\images\\schanghai\\fstadt.jpg",
         "ratio": 1.4989
       },
       {
-        "name": "Fturm",
+        "name": "Schlüssel zur Stadt",
         "path": "images/schanghai/fturm.jpg",
         "thumb": "thumbs\\images\\schanghai\\fturm.jpg",
         "ratio": 1.4989
       },
       {
-        "name": "Hühnchen",
+        "name": "Mittagessen",
         "path": "images/schanghai/hühnchen.jpg",
         "thumb": "thumbs\\images\\schanghai\\hühnchen.jpg",
         "ratio": 1.4989
       },
       {
-        "name": "Mannzigarette",
+        "name": "Pause",
         "path": "images/schanghai/mannzigarette.jpg",
         "thumb": "thumbs\\images\\schanghai\\mannzigarette.jpg",
         "ratio": 1.4989
@@ -1487,13 +849,13 @@
         "ratio": 1.4989
       },
       {
-        "name": "Zigarette",
+        "name": "Verkäuferin",
         "path": "images/schanghai/zigarette.jpg",
         "thumb": "thumbs\\images\\schanghai\\zigarette.jpg",
         "ratio": 1.4989
       },
       {
-        "name": "Zzlastwagen2",
+        "name": "Ausfahrt",
         "path": "images/schanghai/zzlastwagen2.jpg",
         "thumb": "thumbs\\images\\schanghai\\zzlastwagen2.jpg",
         "ratio": 1.4989
@@ -1502,17 +864,17 @@
   },
   {
     "id": "singapur",
-    "name": "Singapur",
+    "name": "Singapura",
     "images": [
       {
-        "name": "1blumenrad",
+        "name": "Singapur",
         "path": "images/singapur/1blumenrad.jpg",
         "thumb": "thumbs\\images\\singapur\\1blumenrad.jpg",
         "ratio": 1.737,
         "cover": "covers\\images\\singapur\\1blumenrad.jpg"
       },
       {
-        "name": "Einsam",
+        "name": "Warten",
         "path": "images/singapur/einsam.jpg",
         "thumb": "thumbs\\images\\singapur\\einsam.jpg",
         "ratio": 1.699
@@ -1536,31 +898,31 @@
         "ratio": 2.0349
       },
       {
-        "name": "Formen2",
+        "name": "Formen 2",
         "path": "images/singapur/formen2.jpg",
         "thumb": "thumbs\\images\\singapur\\formen2.jpg",
         "ratio": 2.1148
       },
       {
-        "name": "Formen3",
+        "name": "Formen 3",
         "path": "images/singapur/formen3.jpg",
         "thumb": "thumbs\\images\\singapur\\formen3.jpg",
         "ratio": 1.4989
       },
       {
-        "name": "Formen4",
+        "name": "Formen 4",
         "path": "images/singapur/formen4.jpg",
         "thumb": "thumbs\\images\\singapur\\formen4.jpg",
         "ratio": 1.4989
       },
       {
-        "name": "Friesenrad",
+        "name": "Riesenrad",
         "path": "images/singapur/friesenrad.jpg",
         "thumb": "thumbs\\images\\singapur\\friesenrad.jpg",
         "ratio": 1.4644
       },
       {
-        "name": "Hotel",
+        "name": "Schiff auf Stelzen",
         "path": "images/singapur/hotel.jpg",
         "thumb": "thumbs\\images\\singapur\\hotel.jpg",
         "ratio": 1.4989
@@ -1572,7 +934,7 @@
         "ratio": 3.5714
       },
       {
-        "name": "Kfenster",
+        "name": "Frühstück",
         "path": "images/singapur/kfenster.jpg",
         "thumb": "thumbs\\images\\singapur\\kfenster.jpg",
         "ratio": 1.6509
@@ -1584,13 +946,13 @@
         "ratio": 0.8986
       },
       {
-        "name": "Lichter",
+        "name": "Künstliche Bäume",
         "path": "images/singapur/lichter.jpg",
         "thumb": "thumbs\\images\\singapur\\lichter.jpg",
         "ratio": 1.7032
       },
       {
-        "name": "Oma",
+        "name": "Freundlichkeit",
         "path": "images/singapur/oma.jpg",
         "thumb": "thumbs\\images\\singapur\\oma.jpg",
         "ratio": 1.7073
@@ -1602,7 +964,7 @@
         "ratio": 1.4989
       },
       {
-        "name": "Pflanzenrad",
+        "name": "Riesenrad im Park",
         "path": "images/singapur/pflanzenrad.jpg",
         "thumb": "thumbs\\images\\singapur\\pflanzenrad.jpg",
         "ratio": 1.6509
@@ -1620,19 +982,19 @@
         "ratio": 1.7284
       },
       {
-        "name": "Strand",
+        "name": "Sentosa",
         "path": "images/singapur/strand.jpg",
         "thumb": "thumbs\\images\\singapur\\strand.jpg",
         "ratio": 1.5945
       },
       {
-        "name": "Vbuddha",
+        "name": "Ruhe",
         "path": "images/singapur/vbuddha.jpg",
         "thumb": "thumbs\\images\\singapur\\vbuddha.jpg",
         "ratio": 1.6393
       },
       {
-        "name": "Vbuddha2",
+        "name": "Ruhe 2",
         "path": "images/singapur/vbuddha2.jpg",
         "thumb": "thumbs\\images\\singapur\\vbuddha2.jpg",
         "ratio": 2.3649
@@ -1644,25 +1006,25 @@
         "ratio": 2.2013
       },
       {
-        "name": "Vschlaf",
+        "name": "Mittagsschlaf",
         "path": "images/singapur/vschlaf.jpg",
         "thumb": "thumbs\\images\\singapur\\vschlaf.jpg",
         "ratio": 1.7073
       },
       {
-        "name": "Zboote",
+        "name": "U-Bahn-Verzierungen",
         "path": "images/singapur/zboote.jpg",
         "thumb": "thumbs\\images\\singapur\\zboote.jpg",
         "ratio": 3.6082
       },
       {
-        "name": "Zigarette",
+        "name": "Vor dem Zug",
         "path": "images/singapur/zigarette.jpg",
         "thumb": "thumbs\\images\\singapur\\zigarette.jpg",
         "ratio": 1.5521
       },
       {
-        "name": "Zigarette2",
+        "name": "Der Zug",
         "path": "images/singapur/zigarette2.jpg",
         "thumb": "thumbs\\images\\singapur\\zigarette2.jpg",
         "ratio": 1.4493
@@ -1674,7 +1036,7 @@
     "name": "Sydney",
     "images": [
       {
-        "name": "1möwe",
+        "name": "Formatfüllend",
         "path": "images/sydney/1möwe.jpg",
         "thumb": "thumbs\\images\\sydney\\1möwe.jpg",
         "ratio": 1.4989,
@@ -1687,49 +1049,49 @@
         "ratio": 1.4989
       },
       {
-        "name": "Bondi",
+        "name": "Bondi Beach",
         "path": "images/sydney/bondi.jpg",
         "thumb": "thumbs\\images\\sydney\\bondi.jpg",
         "ratio": 1.4989
       },
       {
-        "name": "Brusthaar",
+        "name": "Jüngling",
         "path": "images/sydney/brusthaar.jpg",
         "thumb": "thumbs\\images\\sydney\\brusthaar.jpg",
         "ratio": 1.4989
       },
       {
-        "name": "Fledertasche2",
+        "name": "Kurzer Augenblick",
         "path": "images/sydney/fledertasche2.jpg",
         "thumb": "thumbs\\images\\sydney\\fledertasche2.jpg",
         "ratio": 1.4989
       },
       {
-        "name": "Frau",
+        "name": "Feierabend",
         "path": "images/sydney/frau.jpg",
         "thumb": "thumbs\\images\\sydney\\frau.jpg",
         "ratio": 1.4989
       },
       {
-        "name": "Haare2",
+        "name": "Vom Winde verweht",
         "path": "images/sydney/haare2.jpg",
         "thumb": "thumbs\\images\\sydney\\haare2.jpg",
         "ratio": 1.4989
       },
       {
-        "name": "Hintern",
+        "name": "Bottom",
         "path": "images/sydney/hintern.jpg",
         "thumb": "thumbs\\images\\sydney\\hintern.jpg",
         "ratio": 1.4989
       },
       {
-        "name": "Hsafari",
+        "name": "Safari in den Royal Botanic Gardens",
         "path": "images/sydney/hsafari.jpg",
         "thumb": "thumbs\\images\\sydney\\hsafari.jpg",
         "ratio": 2.3102
       },
       {
-        "name": "Israel2",
+        "name": "Utensilien",
         "path": "images/sydney/israel2.jpg",
         "thumb": "thumbs\\images\\sydney\\israel2.jpg",
         "ratio": 1.4989
@@ -1741,73 +1103,73 @@
         "ratio": 1.4989
       },
       {
-        "name": "Jerusalem2",
+        "name": "Dorf",
         "path": "images/sydney/jerusalem2.jpg",
         "thumb": "thumbs\\images\\sydney\\jerusalem2.jpg",
         "ratio": 1.4989
       },
       {
-        "name": "Jschaf2",
+        "name": "Persisches Schaf",
         "path": "images/sydney/jschaf2.jpg",
         "thumb": "thumbs\\images\\sydney\\jschaf2.jpg",
         "ratio": 1.4989
       },
       {
-        "name": "Oper1",
+        "name": "Sydney Opera House",
         "path": "images/sydney/oper1.jpg",
         "thumb": "thumbs\\images\\sydney\\oper1.jpg",
         "ratio": 1.4989
       },
       {
-        "name": "Oper2",
+        "name": "Sydney Opera House 2",
         "path": "images/sydney/oper2.jpg",
         "thumb": "thumbs\\images\\sydney\\oper2.jpg",
         "ratio": 1.4989
       },
       {
-        "name": "Oper3",
+        "name": "Sydney Opera House 3",
         "path": "images/sydney/oper3.jpg",
         "thumb": "thumbs\\images\\sydney\\oper3.jpg",
         "ratio": 0.7957
       },
       {
-        "name": "Oper4",
+        "name": "Sydney Opera House 4",
         "path": "images/sydney/oper4.jpg",
         "thumb": "thumbs\\images\\sydney\\oper4.jpg",
         "ratio": 1.4989
       },
       {
-        "name": "Oper5",
+        "name": "Sydney Opera House 5",
         "path": "images/sydney/oper5.jpg",
         "thumb": "thumbs\\images\\sydney\\oper5.jpg",
         "ratio": 1.4989
       },
       {
-        "name": "Oper6",
+        "name": "Sydney Opera House 6",
         "path": "images/sydney/oper6.jpg",
         "thumb": "thumbs\\images\\sydney\\oper6.jpg",
         "ratio": 1.4989
       },
       {
-        "name": "Oper6a",
+        "name": "Sydney Opera House 6a",
         "path": "images/sydney/oper6a.jpg",
         "thumb": "thumbs\\images\\sydney\\oper6a.jpg",
         "ratio": 1.4989
       },
       {
-        "name": "Oper7",
+        "name": "Sydney Opera House 7",
         "path": "images/sydney/oper7.jpg",
         "thumb": "thumbs\\images\\sydney\\oper7.jpg",
         "ratio": 1.4989
       },
       {
-        "name": "Oper8",
+        "name": "Sydney Opera House 8",
         "path": "images/sydney/oper8.jpg",
         "thumb": "thumbs\\images\\sydney\\oper8.jpg",
         "ratio": 1.4989
       },
       {
-        "name": "Oper9",
+        "name": "Sydney Opera House 9",
         "path": "images/sydney/oper9.jpg",
         "thumb": "thumbs\\images\\sydney\\oper9.jpg",
         "ratio": 1.4989
@@ -1819,7 +1181,7 @@
         "ratio": 1.4989
       },
       {
-        "name": "Sonnenbrille2",
+        "name": "Sonnenbrille 2",
         "path": "images/sydney/sonnenbrille2.jpg",
         "thumb": "thumbs\\images\\sydney\\sonnenbrille2.jpg",
         "ratio": 1.4989
@@ -1831,19 +1193,19 @@
         "ratio": 1.4989
       },
       {
-        "name": "Water",
+        "name": "Wellen",
         "path": "images/sydney/water.jpg",
         "thumb": "thumbs\\images\\sydney\\water.jpg",
         "ratio": 1.4989
       },
       {
-        "name": "Zboot",
+        "name": "Tiefgarage",
         "path": "images/sydney/zboot.jpg",
         "thumb": "thumbs\\images\\sydney\\zboot.jpg",
         "ratio": 1.4989
       },
       {
-        "name": "Zflughafen",
+        "name": "Weiterflug",
         "path": "images/sydney/zflughafen.jpg",
         "thumb": "thumbs\\images\\sydney\\zflughafen.jpg",
         "ratio": 1.2027
