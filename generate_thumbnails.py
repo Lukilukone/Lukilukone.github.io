@@ -65,7 +65,7 @@ except ImportError:
 # Einstellungen — bei Bedarf anpassen
 # ---------------------------------------------------------------------
 JSON_PATH = "portfolio.json"      # Pfad zu deiner Portfolio-Datei
-IMAGES_BASE_DIR = "projekte"      # Ordner, der die Mappen-Unterordner enthält
+IMAGES_BASE_DIR = "images"      # Ordner, der die Mappen-Unterordner enthält
 THUMB_DIR = "thumbs"              # Ordner für die kleinen Grid-Vorschaubilder
 COVER_DIR = "covers"              # Ordner für die größeren Mappen-Cover
 MAX_DIM = 700                     # maximale Kantenlänge der Grid-Vorschaubilder (px)
