@@ -1,5 +1,37 @@
 # Änderungen
 
+## Update 7: Lightbox-Pfeile immer sichtbar, Scroll-Position, Bild-Preloading
+
+**1. Lightbox-Navigationspfeile werden nicht mehr vom Bild verdeckt**
+
+Zwei Fixes in Kombination: Die Pfeile bekommen jetzt einen expliziten
+`z-index`, sodass sie garantiert über dem Bild liegen. Zusätzlich
+bekommt der Bildbereich eine maximale Breite, die auf kleinen
+Bildschirmen etwas weniger als die volle Breite beträgt und auf
+größeren Bildschirmen entsprechend mehr Platz lässt — damit bleibt
+links und rechts immer genug Raum für die Pfeile, egal wie breit das
+Bild ist.
+
+**2. Scroll-Position beim Wechseln zwischen Index und Mappe**
+
+Beim Öffnen einer Mappe wird die aktuelle Scroll-Position des
+Mappen-Index gespeichert und die Galerie springt automatisch nach
+oben. Beim Zurückkehren zum Index über "Zurück zum Index" wird die
+gespeicherte Position exakt wiederhergestellt — man landet also wieder
+genau dort, wo man vorher war.
+
+**3. Nachbarbilder werden im Hintergrund vorgeladen**
+
+Sobald ein Bild in der Lightbox vollständig geladen ist, werden die
+Originalbilder des vorherigen und nächsten Bildes still im Hintergrund
+geladen. Beim Weiterblättern sind diese dann bereits im Browser-Cache
+und erscheinen sofort ohne Ladezeit. Ein interner Cache stellt sicher,
+dass jedes Bild dabei nur einmal heruntergeladen wird, egal wie oft man
+hin- und herspringt. Beim Öffnen einer neuen Mappe wird der Cache
+geleert.
+
+---
+
 ## Update 6: Menü-Button-Überlappung behoben, Hamburger-Icon-Fix, automatische Bilderkennung
 
 **1. Menü-Button überdeckt nicht mehr das Lightbox-Schließen-Icon**

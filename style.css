@@ -584,11 +584,16 @@ img { display: block; max-width: 100%; }
   display: flex;
   align-items: center;
   justify-content: center;
-  /* Reserviert von Anfang an Platz, auch bevor das erste Bild geladen
-     ist (das Bild selbst hat dann noch keine Eigengröße) — verhindert,
-     dass die Stage kollabiert und der Spinner "aus dem Nichts" erscheint. */
   min-height: 40vh;
   min-width: 10vw;
+  /* Seitlicher Abstand schützt die Navigationspfeile: das Bild darf nie
+     breiter werden als der Raum zwischen den Pfeil-Buttons. Auf kleinen
+     Bildschirmen (0.5rem Button + 0.5rem Padding = 2.5rem je Seite,
+     also 5rem gesamt), auf großen 1.5rem + 0.5rem = 5rem je Seite. */
+  max-width: calc(100% - 5rem);
+}
+@media (min-width: 640px) {
+  .lb-stage { max-width: calc(100% - 10rem); }
 }
 
 .lb-image {
@@ -659,6 +664,9 @@ img { display: block; max-width: 100%; }
   color: var(--text);
   padding: 0.5rem;
   transition: opacity 0.2s;
+  /* Expliziter z-index, damit die Buttons immer über dem Bild liegen —
+     auch wenn dieses sehr breit ist und visuell bis an den Rand reicht. */
+  z-index: 2;
 }
 .lb-close:hover, .lb-delete:hover, .lb-prev:hover, .lb-next:hover { opacity: 0.7; }
 .lb-close { top: 1rem; right: 1rem; }

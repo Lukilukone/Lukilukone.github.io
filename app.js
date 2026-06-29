@@ -8,6 +8,7 @@
   let currentId = null;
   let images = [];         // Bilder der aktuell geöffneten Mappe
   let lightboxIndex = null;
+  const preloadCache = new Map(); // Cache für vorgeladene Lightbox-Originalbilder
 
   // ---------------------------------------------------------------
   // DOM refs
@@ -141,16 +142,29 @@
   // ---------------------------------------------------------------
   // Gallery: Navigation & Grid
   // ---------------------------------------------------------------
+  // Merkt sich die Scroll-Position des Mappen-Index, damit man beim
+  // Zurückkehren aus einer Mappe exakt dort weitermacht, wo man war.
+  let savedHomeScrollY = 0;
+
   function openProject(id) {
     currentId = id;
     const project = projects.find((p) => p.id === id);
     if (!project) return;
+
+    // Scroll-Position des Index merken, bevor die Ansicht wechselt
+    savedHomeScrollY = window.scrollY;
 
     images = project.images || [];
 
     viewHome.hidden = true;
     viewGallery.hidden = false;
     viewGallery.classList.add('fade-in');
+
+    // Mappe immer von oben starten
+    window.scrollTo({ top: 0, behavior: 'instant' });
+
+    // Preload-Cache der vorherigen Mappe leeren
+    preloadCache.clear();
 
     galleryTitle.textContent = project.name;
     galleryMeta.textContent = `${images.length} ${images.length === 1 ? 'Bild' : 'Bilder'}`;
@@ -165,6 +179,8 @@
     viewHome.hidden = false;
     viewHome.classList.add('fade-in');
     renderHome();
+    // Scroll-Position des Index wiederherstellen
+    window.scrollTo({ top: savedHomeScrollY, behavior: 'instant' });
   }
 
   function renderImageGrid() {
@@ -373,6 +389,24 @@
     impressumOverlay.hidden = true;
   }
 
+  function preloadImage(path) {
+    if (!path || preloadCache.has(path)) return;
+    const img = new Image();
+    img.onload = () => preloadCache.set(path, img);
+    img.onerror = () => {}; // still scheitern ist OK, kein Nutzer-sichtbarer Fehler
+    img.src = path;
+    // Auch schon vor dem onload eintragen, um doppelte Anfragen zu vermeiden
+    preloadCache.set(path, img);
+  }
+
+  function preloadNeighbours(index) {
+    if (images.length <= 1) return;
+    const prevIdx = (index - 1 + images.length) % images.length;
+    const nextIdx = (index + 1) % images.length;
+    preloadImage(images[prevIdx]?.path);
+    preloadImage(images[nextIdx]?.path);
+  }
+
   // ---------------------------------------------------------------
   // Lightbox
   // ---------------------------------------------------------------
@@ -410,37 +444,49 @@
     const img = images[lightboxIndex];
     if (!img) { closeLightbox(); return; }
 
-    // Lädt direkt das Originalbild — kein Zwischenschritt über das
-    // Thumbnail, damit die Bildgröße beim Öffnen nicht "springt".
-    // Der Spinner blendet sich erst nach kurzer Verzögerung sanft ein
-    // (siehe CSS) und das Bild blendet beim Erscheinen sanft auf.
     lbImage.classList.add('lb-image-hidden');
     lbCaption.classList.add('lb-caption-hidden');
-    lbSpinner.hidden = false;
-    lbSpinner.classList.add('lb-spinner-visible');
 
-    const fullImg = new Image();
-    fullImg.onload = () => {
-      // Nur anzeigen, wenn der Nutzer währenddessen nicht weitergeblättert hat
+    const cached = preloadCache.get(img.path);
+    const alreadyLoaded = cached && cached.complete && cached.naturalWidth > 0;
+
+    if (!alreadyLoaded) {
+      lbSpinner.hidden = false;
+      lbSpinner.classList.add('lb-spinner-visible');
+    }
+
+    const show = () => {
       if (images[lightboxIndex] !== img) return;
       lbSpinner.classList.remove('lb-spinner-visible');
       lbSpinner.hidden = true;
       lbImage.src = img.path;
       lbImage.alt = img.name;
       lbCaption.classList.remove('lb-caption-hidden');
-      // Eine Frame warten, damit der Browser die neue src kennt, bevor
-      // die Opacity-Transition für das sanfte Einblenden startet.
       requestAnimationFrame(() => {
         lbImage.classList.remove('lb-image-hidden');
       });
+      // Nachbarn vorladen, nachdem das aktuelle Bild erschienen ist —
+      // so bekommt das aktuelle Bild zuerst die volle Bandbreite.
+      preloadNeighbours(lightboxIndex);
     };
-    fullImg.onerror = () => {
-      if (images[lightboxIndex] !== img) return;
-      lbSpinner.classList.remove('lb-spinner-visible');
-      lbSpinner.hidden = true;
-      showToast('Bild konnte nicht geladen werden.');
-    };
-    fullImg.src = img.path;
+
+    if (alreadyLoaded) {
+      // Bild ist bereits im Cache: sofort anzeigen, kein Ladevorgang
+      show();
+    } else {
+      const fullImg = preloadCache.get(img.path) || new Image();
+      if (!preloadCache.has(img.path)) {
+        preloadCache.set(img.path, fullImg);
+      }
+      fullImg.onload = show;
+      fullImg.onerror = () => {
+        if (images[lightboxIndex] !== img) return;
+        lbSpinner.classList.remove('lb-spinner-visible');
+        lbSpinner.hidden = true;
+        showToast('Bild konnte nicht geladen werden.');
+      };
+      if (!fullImg.src) fullImg.src = img.path;
+    }
 
     const num = String(lightboxIndex + 1).padStart(2, '0');
     const total = String(images.length).padStart(2, '0');
